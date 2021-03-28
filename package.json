@@ -1,0 +1,12 @@
+{
+  "name": "museum",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server": "cd src/server && php -S localhost:8000",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "serggin",
+  "license": "ISC"
+}
