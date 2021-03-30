@@ -19,6 +19,9 @@ class Database {
                 $user,
                 $pass
             );
+            $this->dbConnection->setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);
+            $this->dbConnection->exec("SET NAMES 'utf8'");
+            $this->dbConnection->exec("SET character_set_client = utf8");
         } catch (\PDOException $e) {
             exit('Database ERORL '.$e->getMessage());
         }

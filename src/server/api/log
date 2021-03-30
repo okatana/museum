@@ -1,0 +1,70 @@
+2021/03/30 12:03:18 processRequest(method), Array
+(
+    [0] => excursion_type
+    [1] => 1
+)
+
+2021/03/30 12:03:18 getExcursionType(1)
+2021/03/30 13:03:55 processRequest(method), Array
+(
+    [0] => excursion
+    [1] => 1
+    [2] => dates
+)
+
+2021/03/30 13:03:48 processRequest(method), Array
+(
+    [0] => excursion
+    [1] => 1
+    [2] => date
+    [3] => 2021-04-01
+)
+
+2021/03/30 13:03:18 processRequest(method), Array
+(
+    [0] => excursion
+    [1] => 1
+    [2] => date
+    [3] => 2021-04-01
+)
+
+2021/03/30 13:03:43 processRequest(method), Array
+(
+    [0] => excursion
+    [1] => 1
+    [2] => date
+    [3] => 2021-04-01
+)
+
+2021/03/30 14:03:23 processRequest(method), Array
+(
+    [0] => excursion
+    [1] => 1
+    [2] => date
+    [3] => 2021-04-01
+)
+
+2021/03/30 14:03:48 processRequest(method), Array
+(
+    [0] => excursion
+    [1] => 1
+    [2] => date
+    [3] => 2021-04-01
+)
+
+2021/03/30 14:03:48 processRequest(method), Array
+(
+    [0] => excursion
+    [1] => 1
+    [2] => date
+    [3] => 2021-04-01
+)
+
+2021/03/30 14:03:54 processRequest(method), Array
+(
+    [0] => excursion
+    [1] => 1
+    [2] => date
+    [3] => 2021-04-01
+)
+
