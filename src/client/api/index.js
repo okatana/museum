@@ -1,4 +1,4 @@
-import {getExcursionDates} from './excursion';
+import {getExcursionDates, getExcursionsForDate} from './excursion';
 
 export const fetchHelper = (url) => {
   const request = new Request(url);
@@ -22,4 +22,4 @@ export const fetchHelper = (url) => {
   );
 }
 
-export {getExcursionDates};
+export {getExcursionDates, getExcursionsForDate};

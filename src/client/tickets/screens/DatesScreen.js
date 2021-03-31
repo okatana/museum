@@ -1,22 +1,27 @@
 import React, {useEffect, useState} from 'react';
 
+import {Config} from '../../config';
 import TicketsInfo from '../../components/TicketsInfo';
 import {getExcursionDates} from '../../api/';
+import {store, screens} from '../../components/TicketsStore';
+import {dateWithWeekDay} from '../../utils';
 
-const weekDays = ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'];
-
-function Billet(dateString) {
-  const date = new Date(dateString);
+function DateBillet(dateString) {
+  const onClick = (dateString) => {
+    store.setScreen(screens.TIMES);
+    store.setSelectedDate(dateString);
+  }
   return (
-    <div className="date-billet" key={dateString}>{`${weekDays[date.getDay()]} ${dateString}`}</div>
+    <div className="date-billet" key={dateString} onClick={() => onClick(dateString)}>
+      {dateWithWeekDay(dateString)}
+    </div>
   );
 };
 
 export default function DatesScreen() {
-  const excursionTypeId = 1;
   const [dates, setDates] = useState([]);
   useEffect(() => {
-    getExcursionDates(excursionTypeId)
+    getExcursionDates(Config.excursionTypeId)
       .then(data => {
         console.log(data);
         setDates(data.map(dateObject => dateObject.date));
@@ -27,7 +32,7 @@ export default function DatesScreen() {
       <TicketsInfo />
       <h2>Выберите день</h2>
       <div className="date-billets">
-        {dates.map(date => (Billet(date)))}
+        {dates.map(date => (DateBillet(date)))}
       </div>
     </>
   );

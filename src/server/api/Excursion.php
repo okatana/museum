@@ -114,7 +114,7 @@ SQL;
 
     private function getExcursionsForDate($type_id, $date) {
         $sql = <<<SQL
-SELECT e.id, participants_limit, TIME(`when`) as 'time', 
+SELECT e.id, participants_limit, `when` AS datetime, 
 e.fullcost_tickets+e.discount_tickets+e.free_tickets+
   SUM(IFNULL(ps.fullcost_tickets,0)+IFNULL(ps.discount_tickets,0)+IFNULL(ps.free_tickets,0)) AS sold,
 SUM(IFNULL(pr.fullcost_tickets,0)+IFNULL(pr.discount_tickets,0)+IFNULL(pr.free_tickets,0)) AS reserved

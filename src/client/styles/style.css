@@ -48,4 +48,40 @@
     margin: 0 24px;
     background-color: white;
     box-shadow: #d0cccc 0 0 8px;
+    cursor: pointer;
+}
+.times-screen {
+
+}
+.times-screen h2 {
+    color: red;
+    text-align: center;
+}
+.time-billets {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.time-billet {
+    width: 5em;
+    border: 0px solid;
+    border-radius: 4px;
+    padding: 6px;
+    margin: 0 24px;
+    background-color: white;
+    box-shadow: #d0cccc 0 0 8px;
+    cursor: pointer;
+}
+.time-billet span {
+    padding: 4px;
+}
+.time-billet-available {
+    color: white;
+    background-color: lightgreen;
+}
+.time-billet.disabled span {
+    color: #aaa;
+}
+.time-billet.disabled .time-billet-available{
+    background-color: #ccc;
 }
