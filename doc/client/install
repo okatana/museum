@@ -1,0 +1,15 @@
+$ npm init
+$ npm i react react-dom
+
+$ npm i -D @babel/core @babel/eslint-parser babel-loader @babel/preset-env @babel/preset-react clean-webpack-plugin css-loader eslint file-loader
+$ npm i -D html-webpack-plugin style-loader url-loader webpack webpack-cli webpack-dev-server
+$ npm i -D @babel/plugin-proposal-decorators @babel/plugin-proposal-function-sent @babel/plugin-proposal-export-namespace-from
+$ npm i -D @babel/plugin-proposal-numeric-separator @babel/plugin-proposal-throw-expressions @babel/plugin-proposal-class-properties
+
+$ npx install-peerdeps --dev eslint-config-airbnb
+# Выдает ошибку ...
+# Помогает флаг --legacy-peer-deps и команда:
+$ npm install eslint-config-airbnb@18.2.1 eslint@^7.2.0 eslint-plugin-import@^2.22.1 eslint-plugin-jsx-a11y@^6.4.1 \
+eslint-plugin-react@^7.21.5 eslint-plugin-react-hooks@^1.7.0 --save-dev --legacy-peer-deps
+
+$ npm i mobx mobx-react-lite

@@ -68,3 +68,52 @@
     [3] => 2021-04-01
 )
 
+2021/03/31 11:03:19 processRequest(method), Array
+(
+    [0] => excursion
+    [1] => 1
+    [2] => dates
+)
+
+2021/03/31 11:03:17 processRequest(method), Array
+(
+    [0] => excursion
+    [1] => 1
+    [2] => dates
+)
+
+2021/03/31 11:03:09 processRequest(method), Array
+(
+    [0] => excursion
+    [1] => 1
+    [2] => dates
+)
+
+2021/03/31 11:03:56 processRequest(method), Array
+(
+    [0] => excursion
+    [1] => 1
+    [2] => dates
+)
+
+2021/03/31 11:03:08 processRequest(method), Array
+(
+    [0] => excursion
+    [1] => 1
+    [2] => dates
+)
+
+2021/03/31 11:03:00 processRequest(method), Array
+(
+    [0] => excursion
+    [1] => 1
+    [2] => dates
+)
+
+2021/03/31 11:03:26 processRequest(method), Array
+(
+    [0] => excursion
+    [1] => 1
+    [2] => dates
+)
+

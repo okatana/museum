@@ -1,0 +1,51 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+* {
+    font-family: Roboto;
+}
+.ticket-description {
+    white-space: pre-wrap;
+}
+.tickets-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+.ticket-info {
+    font-weight: 600;
+    width: 12em;
+    height: 12em;
+    color: white;
+    padding: 4px 8px 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.ticket-description {
+    text-align: center;
+}
+.ticket-info-fullcost {
+    background-color: #3E66FB;
+}
+.ticket-info-discount {
+    background-color: #4DCD80;
+}
+.ticket-info-free {
+    background-color: #F081D8;
+}
+.date-billets {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.date-billet {
+    text-align: center;
+    width: 8em;
+    border: 0px solid;
+    border-radius: 4px;
+    padding: 6px;
+    margin: 0 24px;
+    background-color: white;
+    box-shadow: #d0cccc 0 0 8px;
+}
