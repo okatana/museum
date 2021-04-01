@@ -2,6 +2,17 @@
 * {
     font-family: Roboto;
 }
+.image-button-image {
+    width: 2em;
+}
+.navigation {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.navigation *{
+    margin: 0;
+}
 .ticket-description {
     white-space: pre-wrap;
 }
@@ -53,7 +64,7 @@
 .times-screen {
 
 }
-.times-screen h2 {
+.date-selected {
     color: red;
     text-align: center;
 }
@@ -71,6 +82,8 @@
     background-color: white;
     box-shadow: #d0cccc 0 0 8px;
     cursor: pointer;
+    display: flex;
+    align-items: center;
 }
 .time-billet span {
     padding: 4px;
@@ -84,4 +97,25 @@
 }
 .time-billet.disabled .time-billet-available{
     background-color: #ccc;
+}
+.ticket-select {
+    max-width: 600px;
+    height: 4em;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.ticket-select-color {
+    width: 1em;
+    height: 100%;
+}
+.number-inc-dec{
+}
+.number-inc-dec span{
+    margin: 0 1.5em;
+}
+.tickets-stats {
+    display: flex;
+    justify-content: space-evenly;
 }

@@ -2,11 +2,12 @@ import React, {useEffect, useState} from 'react';
 
 import {Config} from '../../config';
 import {store, screens} from '../../components/TicketsStore';
+import BackButton from '../../components/BackButton';
 import {dateWithWeekDay, formatTime} from '../../utils';
 import {getExcursionsForDate} from '../../api';
 
 //function TimeBillet({excursionId, ticketsAvailable, timeString}) {
-function TimeBillet(excursion) {
+export function TimeBillet(excursion) {
   const {id, participants_limit, sold, reserved, datetime} = excursion;
   const onClick = () => {
     store.setScreen(screens.ORDER);
@@ -35,8 +36,12 @@ export default function TimesScreen() {
 
   return (
     <div className="times-screen">
-      <h2>{dateWithWeekDay(selectedDate)}</h2>
-      <h3>Выберите день</h3>
+      <div className="navigation">
+        <BackButton onClick={() => {store.setScreen(screens.DATES)}}/>
+        <h2 className="date-selected">{dateWithWeekDay(selectedDate)}</h2>
+        <div></div>
+      </div>
+      <h3>Выберите время</h3>
       <div className="time-billets">
         {times.map(excursion => (TimeBillet(excursion)))}
       </div>

@@ -2,24 +2,27 @@ import React from 'react';
 
 import TicketInfo from './TicketInfo';
 
-const ticketsInfo = [
+export const ticketsInfo = [
   {
     type: 'fullcost',
     title: 'Взрослый билет',
     description: '',
-    price: 400
+    price: 400,
+    color: '#3E66FB',
   },
   {
     type: 'discount',
     title: 'Льготный билет',
     description: 'Школьники, студенты, инвалиды, пенсионеры',
-    price:300
+    price: 300,
+    color: '#4DCD80',
   },
   {
     type: 'free',
     title: 'Дети до 5 лет',
     description: '',
-    price:0
+    price: 0,
+    color: '#F081D8',
   },
 ];
 
