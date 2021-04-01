@@ -98,6 +98,10 @@
 .time-billet.disabled .time-billet-available{
     background-color: #ccc;
 }
+.order-screen {
+    max-width: 600px;
+    margin: 0 auto;
+}
 .ticket-select {
     max-width: 600px;
     height: 4em;
@@ -114,8 +118,24 @@
 }
 .number-inc-dec span{
     margin: 0 1.5em;
+    width: 2em;
 }
 .tickets-stats {
+    margin: 1em 0;
     display: flex;
     justify-content: space-evenly;
+}
+.checkout-button {
+    display: block;
+    margin: 1em auto;
+    width: 8em;
+    height: 3em;
+    background-color: darkcyan;
+    color: white;
+    border: 0px solid;
+    border-radius: 4px;
+}
+.checkout-button:disabled {
+    background-color: powderblue;
+    /*color: #aaa;*/
 }

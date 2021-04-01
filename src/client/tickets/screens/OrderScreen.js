@@ -54,6 +54,9 @@ export default function OrderScreen() {
     }
 */
   }
+  const ticketsSelected = () => Object.values(tickets).reduce((acc, cur) => {
+    return acc + cur;
+  }, 0)
 /*
   useEffect(() => {
     console.log('useEffect() fullcost=', fullcost);
@@ -86,6 +89,7 @@ export default function OrderScreen() {
         <span>{cost} руб.</span>
         <span>Осталось {ticketsLeft} билетов</span>
       </div>
+      <button className="checkout-button"disabled={ticketsSelected() === 0}>Оформить</button>
     </div>
   );
 }
