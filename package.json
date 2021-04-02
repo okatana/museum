@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "tickets": "webpack serve --devtool inline-source-map --hot --config webpack.tickets.config.js",
+    "tickets:build": "webpack --config webpack.tickets.build.config.js",
     "server": "cd src/server && php -S localhost:8000",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -38,6 +39,7 @@
     "eslint-plugin-react-hooks": "^1.7.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.3.1",
+    "mini-css-extract-plugin": "^1.4.0",
     "style-loader": "^2.0.0",
     "url-loader": "^4.1.1",
     "webpack": "^5.28.0",

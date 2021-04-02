@@ -1,228 +1,30 @@
-2021/03/30 12:03:18 processRequest(method), Array
+2021/04/02 11:04:06 $uri=Array
 (
-    [0] => excursion_type
-    [1] => 1
+    [0] => 
+    [1] => api
+    [2] => excursion
+    [3] => 1
+    [4] => dates
 )
 
-2021/03/30 12:03:18 getExcursionType(1)
-2021/03/30 13:03:55 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/30 13:03:48 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-01
-)
-
-2021/03/30 13:03:18 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-01
-)
-
-2021/03/30 13:03:43 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-01
-)
-
-2021/03/30 14:03:23 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-01
-)
-
-2021/03/30 14:03:48 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-01
-)
-
-2021/03/30 14:03:48 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-01
-)
-
-2021/03/30 14:03:54 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-01
-)
-
-2021/03/31 11:03:19 processRequest(method), Array
+2021/04/02 11:04:06 processRequest(GET), Array
 (
     [0] => excursion
     [1] => 1
     [2] => dates
 )
 
-2021/03/31 11:03:17 processRequest(method), Array
+2021/04/02 11:04:48 $uri=Array
 (
-    [0] => excursion
-    [1] => 1
-    [2] => dates
+    [0] => 
+    [1] => api
+    [2] => excursion
+    [3] => 1
+    [4] => date
+    [5] => 2021-04-02
 )
 
-2021/03/31 11:03:09 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 11:03:56 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 11:03:08 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 11:03:00 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 11:03:26 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 12:03:06 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 12:03:08 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 12:03:33 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 12:03:33 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 12:03:39 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 12:03:39 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 12:03:01 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 12:03:01 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 12:03:01 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 12:03:35 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 12:03:36 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 13:03:35 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 13:03:36 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 13:03:25 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 13:03:29 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 13:03:32 processRequest(method), Array
+2021/04/02 11:04:48 processRequest(GET), Array
 (
     [0] => excursion
     [1] => 1
@@ -230,1123 +32,130 @@
     [3] => 2021-04-02
 )
 
-2021/03/31 13:03:31 processRequest(method), Array
+2021/04/02 11:04:57 $uri=Array
 (
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 13:03:31 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 14:03:35 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-01
-)
-
-2021/03/31 14:03:42 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 14:03:42 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 14:03:58 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 14:03:58 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 14:03:57 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 14:03:57 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 14:03:36 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 14:03:36 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 14:03:42 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 14:03:43 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 14:03:22 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 14:03:22 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 14:03:44 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 14:03:44 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 14:03:01 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 14:03:02 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 14:03:02 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 14:03:04 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-01
-)
-
-2021/03/31 14:03:31 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 14:03:33 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-01
-)
-
-2021/03/31 14:03:53 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 14:03:53 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 14:03:53 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 14:03:56 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-01
-)
-
-2021/03/31 15:03:04 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 15:03:05 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 15:03:05 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 15:03:48 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 15:03:48 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 15:03:48 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 15:03:52 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-01
-)
-
-2021/03/31 15:03:58 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 15:03:58 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 15:03:58 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 15:03:00 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-01
-)
-
-2021/03/31 15:03:34 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-02
-)
-
-2021/03/31 15:03:43 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 15:03:43 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 15:03:43 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 15:03:45 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-01
-)
-
-2021/03/31 15:03:06 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 15:03:06 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 15:03:07 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 15:03:37 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-02
-)
-
-2021/03/31 15:03:41 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 15:03:41 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 15:03:42 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 15:03:43 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-02
-)
-
-2021/03/31 15:03:25 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 15:03:26 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-02
-)
-
-2021/03/31 15:03:44 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 15:03:46 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-02
-)
-
-2021/03/31 15:03:24 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 15:03:26 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-02
-)
-
-2021/03/31 15:03:19 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 15:03:20 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-02
-)
-
-2021/03/31 15:03:43 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 15:03:44 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 15:03:44 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 15:03:04 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-02
-)
-
-2021/03/31 15:03:46 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 15:03:48 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-01
-)
-
-2021/03/31 15:03:13 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 15:03:15 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-02
-)
-
-2021/03/31 15:03:18 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 15:03:19 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-02
-)
-
-2021/03/31 15:03:38 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 15:03:39 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-02
-)
-
-2021/03/31 15:03:54 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 15:03:54 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 15:03:55 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 15:03:56 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-02
-)
-
-2021/03/31 17:03:20 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 17:03:24 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 17:03:41 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-02
-)
-
-2021/03/31 17:03:29 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 17:03:31 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-02
-)
-
-2021/03/31 17:03:53 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 17:03:35 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 17:03:00 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-02
-)
-
-2021/03/31 17:03:18 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 17:03:07 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 17:03:13 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-02
-)
-
-2021/03/31 18:03:30 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 18:03:47 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-01
-)
-
-2021/03/31 18:03:27 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 18:03:02 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 18:03:13 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 18:03:16 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-02
-)
-
-2021/03/31 18:03:33 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 18:03:31 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 18:03:02 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 18:03:11 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 18:03:15 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-02
-)
-
-2021/03/31 19:03:55 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 19:03:59 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-02
-)
-
-2021/03/31 19:03:14 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 19:03:17 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-02
-)
-
-2021/03/31 19:03:05 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 19:03:08 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-01
-)
-
-2021/03/31 19:03:03 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 19:03:04 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-01
-)
-
-2021/03/31 19:03:47 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 19:03:49 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-01
-)
-
-2021/03/31 19:03:51 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 19:03:15 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-01
-)
-
-2021/03/31 19:03:51 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 19:03:42 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-02
-)
-
-2021/03/31 19:03:29 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 19:03:05 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 19:03:11 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 19:03:12 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-02
-)
-
-2021/03/31 19:03:21 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-02
-)
-
-2021/03/31 19:03:41 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 19:03:42 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-02
-)
-
-2021/03/31 19:03:22 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 19:03:23 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-02
-)
-
-2021/03/31 19:03:44 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/03/31 19:03:16 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/04/01 10:04:54 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/04/01 10:04:56 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-02
-)
-
-2021/04/01 10:04:31 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/04/01 10:04:36 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-02
-)
-
-2021/04/01 10:04:14 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-02
-)
-
-2021/04/01 10:04:45 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/04/01 10:04:50 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-02
-)
-
-2021/04/01 10:04:26 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/04/01 10:04:29 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-02
-)
-
-2021/04/01 10:04:54 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/04/01 10:04:56 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-02
-)
-
-2021/04/01 10:04:57 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/04/01 11:04:13 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-02
-)
-
-2021/04/01 11:04:19 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/04/01 11:04:20 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-02
+    [0] => 
+    [1] => api
+    [2] => participants
 )
 
-2021/04/01 11:04:19 processRequest(method), Array
+2021/04/02 11:04:57 processRequest(OPTIONS), Array
 (
-    [0] => excursion
-    [1] => 1
-    [2] => dates
+    [0] => participants
 )
 
-2021/04/01 11:04:21 processRequest(method), Array
+2021/04/02 11:04:18 $uri=Array
 (
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-02
+    [0] => 
+    [1] => api
+    [2] => participants
 )
 
-2021/04/01 11:04:41 processRequest(method), Array
+2021/04/02 11:04:18 $uri=Array
 (
-    [0] => excursion
-    [1] => 1
-    [2] => dates
+    [0] => 
+    [1] => api
+    [2] => participants
 )
 
-2021/04/01 11:04:40 processRequest(method), Array
+2021/04/02 11:04:18 processRequest(POST), Array
 (
-    [0] => excursion
-    [1] => 1
-    [2] => dates
+    [0] => participants
 )
 
-2021/04/01 11:04:02 processRequest(method), Array
+2021/04/02 11:04:18 processPost Array
 (
-    [0] => excursion
-    [1] => 1
-    [2] => dates
+    [excursion_id] => 5
+    [lastname] => Иванов
+    [firstname] => Иван
+    [midname] => 
+    [phone] => 1234567
+    [email] => 
+    [cost] => 300
+    [fullcost] => 0
+    [discount] => 1
+    [free] => 0
 )
 
-2021/04/01 11:04:05 processRequest(method), Array
+2021/04/02 11:04:09 $uri=Array
 (
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-02
+    [0] => 
+    [1] => api
+    [2] => participants
 )
 
-2021/04/01 11:04:27 processRequest(method), Array
+2021/04/02 11:04:09 processRequest(POST), Array
 (
-    [0] => excursion
-    [1] => 1
-    [2] => dates
+    [0] => participants
 )
 
-2021/04/01 11:04:29 processRequest(method), Array
+2021/04/02 11:04:09 processPost Array
 (
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-02
+    [excursion_id] => 5
+    [lastname] => Иванов
+    [firstname] => Иван
+    [midname] => 
+    [phone] => 1234567
+    [email] => 
+    [cost] => 300
+    [fullcost] => 0
+    [discount] => 1
+    [free] => 0
 )
 
-2021/04/01 11:04:16 processRequest(method), Array
+2021/04/02 11:04:02 $uri=Array
 (
-    [0] => excursion
-    [1] => 1
-    [2] => dates
+    [0] => 
+    [1] => api
+    [2] => participants
 )
 
-2021/04/01 11:04:19 processRequest(method), Array
+2021/04/02 11:04:02 processRequest(POST), Array
 (
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-02
+    [0] => participants
 )
 
-2021/04/01 11:04:11 processRequest(method), Array
+2021/04/02 11:04:02 processPost Array
 (
-    [0] => excursion
-    [1] => 1
-    [2] => dates
+    [excursion_id] => 5
+    [lastname] => Иванов
+    [firstname] => Иван
+    [midname] => 
+    [phone] => 1234567
+    [email] => 
+    [cost] => 300
+    [fullcost] => 0
+    [discount] => 1
+    [free] => 0
 )
 
-2021/04/01 11:04:14 processRequest(method), Array
+2021/04/02 12:04:03 $uri=Array
 (
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-02
+    [0] => 
+    [1] => api
+    [2] => excursion
+    [3] => 1
+    [4] => dates
 )
 
-2021/04/01 11:04:45 processRequest(method), Array
+2021/04/02 12:04:03 processRequest(GET), Array
 (
     [0] => excursion
     [1] => 1
     [2] => dates
-)
-
-2021/04/01 11:04:48 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-02
 )
 
-2021/04/01 11:04:34 processRequest(method), Array
+2021/04/02 12:04:17 $uri=Array
 (
-    [0] => excursion
-    [1] => 1
-    [2] => dates
+    [0] => 
+    [1] => api
+    [2] => excursion
+    [3] => 1
+    [4] => date
+    [5] => 2021-04-03
 )
 
-2021/04/01 11:04:35 processRequest(method), Array
+2021/04/02 12:04:17 processRequest(GET), Array
 (
     [0] => excursion
     [1] => 1
@@ -1354,36 +163,33 @@
     [3] => 2021-04-03
 )
 
-2021/04/01 11:04:55 processRequest(method), Array
+2021/04/02 12:04:20 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => excursion
+    [3] => 1
+    [4] => dates
+)
+
+2021/04/02 12:04:20 processRequest(GET), Array
 (
     [0] => excursion
     [1] => 1
     [2] => dates
 )
 
-2021/04/01 11:04:57 processRequest(method), Array
+2021/04/02 12:04:24 $uri=Array
 (
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-03
+    [0] => 
+    [1] => api
+    [2] => excursion
+    [3] => 1
+    [4] => date
+    [5] => 2021-04-02
 )
 
-2021/04/01 12:04:17 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/04/01 12:04:01 processRequest(method), Array
-(
-    [0] => excursion
-    [1] => 1
-    [2] => dates
-)
-
-2021/04/01 12:04:02 processRequest(method), Array
+2021/04/02 12:04:24 processRequest(GET), Array
 (
     [0] => excursion
     [1] => 1
@@ -1391,14 +197,17 @@
     [3] => 2021-04-02
 )
 
-2021/04/01 12:04:12 processRequest(method), Array
+2021/04/02 12:04:28 $uri=Array
 (
-    [0] => excursion
-    [1] => 1
-    [2] => dates
+    [0] => 
+    [1] => api
+    [2] => excursion
+    [3] => 1
+    [4] => date
+    [5] => 2021-04-02
 )
 
-2021/04/01 12:04:15 processRequest(method), Array
+2021/04/02 12:04:28 processRequest(GET), Array
 (
     [0] => excursion
     [1] => 1
@@ -1406,14 +215,43 @@
     [3] => 2021-04-02
 )
 
-2021/04/01 12:04:45 processRequest(method), Array
+2021/04/02 12:04:30 $uri=Array
 (
-    [0] => excursion
-    [1] => 1
-    [2] => dates
+    [0] => 
+    [1] => api
+    [2] => participants
 )
 
-2021/04/01 12:04:47 processRequest(method), Array
+2021/04/02 12:04:30 processRequest(POST), Array
+(
+    [0] => participants
+)
+
+2021/04/02 12:04:30 processPost Array
+(
+    [excursion_id] => 5
+    [lastname] => Петрова
+    [firstname] => Лиля
+    [midname] => 
+    [phone] => 1234567
+    [email] => sdd@gfg.com
+    [cost] => 2700
+    [fullcost] => 3
+    [discount] => 5
+    [free] => 5
+)
+
+2021/04/02 12:04:53 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => excursion
+    [3] => 1
+    [4] => date
+    [5] => 2021-04-02
+)
+
+2021/04/02 12:04:53 processRequest(GET), Array
 (
     [0] => excursion
     [1] => 1
@@ -1421,160 +259,454 @@
     [3] => 2021-04-02
 )
 
-2021/04/01 12:04:19 processRequest(method), Array
+2021/04/02 12:04:02 $uri=Array
 (
-    [0] => excursion
-    [1] => 1
-    [2] => dates
+    [0] => 
+    [1] => api
+    [2] => excursion
+    [3] => 1
+    [4] => date
+    [5] => 2021-04-02
 )
 
-2021/04/01 12:04:25 processRequest(method), Array
+2021/04/02 12:04:02 processRequest(GET), Array
 (
     [0] => excursion
     [1] => 1
     [2] => date
-    [3] => 2021-04-01
+    [3] => 2021-04-02
 )
 
-2021/04/01 12:04:32 processRequest(method), Array
+2021/04/02 12:04:11 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => participants
+)
+
+2021/04/02 12:04:11 processRequest(POST), Array
+(
+    [0] => participants
+)
+
+2021/04/02 12:04:11 processPost Array
+(
+    [excursion_id] => 5
+    [lastname] => Семенов
+    [firstname] => Иван
+    [midname] => 
+    [phone] => 1234567
+    [email] => 
+    [cost] => 400
+    [fullcost] => 1
+    [discount] => 0
+    [free] => 0
+)
+
+2021/04/02 12:04:42 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => excursion
+    [3] => 1
+    [4] => dates
+)
+
+2021/04/02 12:04:42 processRequest(GET), Array
 (
     [0] => excursion
     [1] => 1
     [2] => dates
 )
 
-2021/04/01 12:04:34 processRequest(method), Array
+2021/04/02 12:04:15 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => excursion
+    [3] => 1
+    [4] => dates
+)
+
+2021/04/02 12:04:15 processRequest(GET), Array
+(
+    [0] => excursion
+    [1] => 1
+    [2] => dates
+)
+
+2021/04/02 12:04:16 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => excursion
+    [3] => 1
+    [4] => date
+    [5] => 2021-04-02
+)
+
+2021/04/02 12:04:16 processRequest(GET), Array
 (
     [0] => excursion
     [1] => 1
     [2] => date
-    [3] => 2021-04-01
+    [3] => 2021-04-02
 )
 
-2021/04/01 12:04:08 processRequest(method), Array
+2021/04/02 12:04:01 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => excursion
+    [3] => 1
+    [4] => dates
+)
+
+2021/04/02 12:04:01 processRequest(GET), Array
 (
     [0] => excursion
     [1] => 1
     [2] => dates
 )
 
-2021/04/01 12:04:10 processRequest(method), Array
+2021/04/02 12:04:03 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => excursion
+    [3] => 1
+    [4] => date
+    [5] => 2021-04-02
+)
+
+2021/04/02 12:04:03 processRequest(GET), Array
 (
     [0] => excursion
     [1] => 1
     [2] => date
-    [3] => 2021-04-01
+    [3] => 2021-04-02
 )
 
-2021/04/01 12:04:13 processRequest(method), Array
+2021/04/02 12:04:53 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => excursion
+    [3] => 1
+    [4] => dates
+)
+
+2021/04/02 12:04:53 processRequest(GET), Array
 (
     [0] => excursion
     [1] => 1
     [2] => dates
 )
 
-2021/04/01 12:04:15 processRequest(method), Array
+2021/04/02 12:04:12 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => excursion
+    [3] => 1
+    [4] => dates
+)
+
+2021/04/02 12:04:12 processRequest(GET), Array
+(
+    [0] => excursion
+    [1] => 1
+    [2] => dates
+)
+
+2021/04/02 12:04:13 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => excursion
+    [3] => 1
+    [4] => date
+    [5] => 2021-04-02
+)
+
+2021/04/02 12:04:13 processRequest(GET), Array
 (
     [0] => excursion
     [1] => 1
     [2] => date
-    [3] => 2021-04-01
+    [3] => 2021-04-02
 )
 
-2021/04/01 12:04:15 processRequest(method), Array
+2021/04/02 12:04:40 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => participants
+)
+
+2021/04/02 12:04:40 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => participants
+)
+
+2021/04/02 12:04:40 processRequest(POST), Array
+(
+    [0] => participants
+)
+
+2021/04/02 12:04:40 processPost Array
+(
+    [excursion_id] => 6
+    [lastname] => Гусев
+    [firstname] => Олег
+    [midname] => 
+    [phone] => 13412345
+    [email] => 
+    [cost] => 600
+    [fullcost] => 0
+    [discount] => 2
+    [free] => 0
+)
+
+2021/04/02 12:04:56 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => excursion
+    [3] => 1
+    [4] => dates
+)
+
+2021/04/02 12:04:56 processRequest(GET), Array
 (
     [0] => excursion
     [1] => 1
     [2] => dates
 )
 
-2021/04/01 12:04:34 processRequest(method), Array
+2021/04/02 12:04:01 $uri=Array
 (
-    [0] => excursion
-    [1] => 1
-    [2] => dates
+    [0] => 
+    [1] => api
+    [2] => excursion
+    [3] => 1
+    [4] => date
+    [5] => 2021-04-02
 )
 
-2021/04/01 12:04:36 processRequest(method), Array
+2021/04/02 12:04:01 processRequest(GET), Array
 (
     [0] => excursion
     [1] => 1
     [2] => date
-    [3] => 2021-04-01
+    [3] => 2021-04-02
 )
 
-2021/04/01 12:04:04 processRequest(method), Array
+2021/04/02 12:04:24 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => participants
+)
+
+2021/04/02 12:04:24 processRequest(POST), Array
+(
+    [0] => participants
+)
+
+2021/04/02 12:04:24 processPost Array
+(
+    [excursion_id] => 6
+    [lastname] => Ким
+    [firstname] => ли
+    [midname] => 
+    [phone] => 4444444
+    [email] => 
+    [cost] => 400
+    [fullcost] => 1
+    [discount] => 0
+    [free] => 0
+)
+
+2021/04/02 12:04:41 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => excursion
+    [3] => 1
+    [4] => dates
+)
+
+2021/04/02 12:04:41 processRequest(GET), Array
 (
     [0] => excursion
     [1] => 1
     [2] => dates
 )
 
-2021/04/01 12:04:06 processRequest(method), Array
+2021/04/02 12:04:43 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => excursion
+    [3] => 1
+    [4] => date
+    [5] => 2021-04-02
+)
+
+2021/04/02 12:04:43 processRequest(GET), Array
 (
     [0] => excursion
     [1] => 1
     [2] => date
-    [3] => 2021-04-01
+    [3] => 2021-04-02
 )
 
-2021/04/01 12:04:20 processRequest(method), Array
+2021/04/02 12:04:11 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => participants
+)
+
+2021/04/02 12:04:11 processRequest(POST), Array
+(
+    [0] => participants
+)
+
+2021/04/02 12:04:11 processPost Array
+(
+    [excursion_id] => 6
+    [lastname] => Осипова
+    [firstname] => Дарья
+    [midname] => 
+    [phone] => 543454
+    [email] => 
+    [cost] => 0
+    [fullcost] => 0
+    [discount] => 0
+    [free] => 2
+)
+
+2021/04/02 12:04:15 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => excursion
+    [3] => 1
+    [4] => dates
+)
+
+2021/04/02 12:04:15 processRequest(GET), Array
 (
     [0] => excursion
     [1] => 1
     [2] => dates
 )
 
-2021/04/01 12:04:22 processRequest(method), Array
+2021/04/02 12:04:17 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => excursion
+    [3] => 1
+    [4] => date
+    [5] => 2021-04-02
+)
+
+2021/04/02 12:04:17 processRequest(GET), Array
 (
     [0] => excursion
     [1] => 1
     [2] => date
-    [3] => 2021-04-01
+    [3] => 2021-04-02
 )
 
-2021/04/01 12:04:56 processRequest(method), Array
+2021/04/02 12:04:44 $uri=Array
 (
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-01
+    [0] => 
+    [1] => api
+    [2] => participants
 )
 
-2021/04/01 15:04:44 processRequest(method), Array
+2021/04/02 12:04:44 processRequest(POST), Array
+(
+    [0] => participants
+)
+
+2021/04/02 12:04:44 processPost Array
+(
+    [excursion_id] => 6
+    [lastname] => Вовк
+    [firstname] => Семен
+    [midname] => 
+    [phone] => 7656756756
+    [email] => 
+    [cost] => 0
+    [fullcost] => 0
+    [discount] => 0
+    [free] => 3
+)
+
+2021/04/02 13:04:22 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => excursion
+    [3] => 1
+    [4] => dates
+)
+
+2021/04/02 13:04:22 processRequest(GET), Array
 (
     [0] => excursion
     [1] => 1
     [2] => dates
 )
 
-2021/04/01 15:04:54 processRequest(method), Array
+2021/04/02 13:04:36 $uri=Array
 (
-    [0] => excursion
-    [1] => 1
-    [2] => dates
+    [0] => 
+    [1] => api
+    [2] => excursion
+    [3] => 1
+    [4] => date
+    [5] => 2021-04-02
 )
 
-2021/04/01 15:04:56 processRequest(method), Array
+2021/04/02 13:04:36 processRequest(GET), Array
 (
     [0] => excursion
     [1] => 1
     [2] => date
-    [3] => 2021-04-01
+    [3] => 2021-04-02
 )
 
-2021/04/01 15:04:45 processRequest(method), Array
+2021/04/02 13:04:54 $uri=Array
 (
-    [0] => excursion
-    [1] => 1
-    [2] => dates
+    [0] => 
+    [1] => api
+    [2] => participants
 )
 
-2021/04/01 15:04:50 processRequest(method), Array
+2021/04/02 13:04:54 processRequest(POST), Array
 (
-    [0] => excursion
-    [1] => 1
-    [2] => date
-    [3] => 2021-04-01
+    [0] => participants
+)
+
+2021/04/02 13:04:54 processPost Array
+(
+    [excursion_id] => 6
+    [lastname] => Сучков
+    [firstname] => Сеня
+    [midname] => 
+    [phone] => 66656
+    [email] => 
+    [cost] => 300
+    [fullcost] => 0
+    [discount] => 1
+    [free] => 0
 )
 

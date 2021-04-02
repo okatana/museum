@@ -16,6 +16,15 @@ class BaseController {
         return $response;
     }
 
+    protected function json201Response($message = null)
+    {
+        $response['status_code_header'] = 'HTTP/1.1 201 Created';
+        if ($message) {
+            $response['body'] = json_encode(['message' => $message]);
+        }
+        return $response;
+    }
+
     protected function dbErrorResponse($message)
     {
         $response['status_code_header'] = 'HTTP/1.1 500 Internal Server Error';

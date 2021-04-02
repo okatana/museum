@@ -13,3 +13,5 @@ $ npm install eslint-config-airbnb@18.2.1 eslint@^7.2.0 eslint-plugin-import@^2.
 eslint-plugin-react@^7.21.5 eslint-plugin-react-hooks@^1.7.0 --save-dev --legacy-peer-deps
 
 $ npm i mobx mobx-react-lite
+
+$ npm i -D mini-css-extract-plugin

@@ -1,6 +1,7 @@
 import {getExcursionDates, getExcursionsForDate} from './excursion';
+import {addParticipant} from './participant';
 
-export const fetchHelper = (url) => {
+export function fetchHelper(url) {
   const request = new Request(url);
   return (
     fetch(request)
@@ -22,4 +23,25 @@ export const fetchHelper = (url) => {
   );
 }
 
-export {getExcursionDates, getExcursionsForDate};
+export function fetchPostHelper(url, data) {
+  return (
+    fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    })
+      .then(response => {
+        if (response.status === 201) {
+          return;
+        } else {
+          return response.json();
+        }
+      })
+      .catch((error) => {
+        console.error(error);
+        throw error;
+      })
+  )
+}
+
+export {getExcursionDates, getExcursionsForDate, addParticipant};

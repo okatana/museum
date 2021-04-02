@@ -9,7 +9,7 @@ class Excursion extends BaseController{
 
     public function processRequest($method, $params)
     {
-        $this->log("processRequest(method), ".print_r($params, true));
+        $this->log("processRequest($method), ".print_r($params, true));
         $mainToken = $params[0];
         array_splice($params, 0, 1);
         if ($mainToken === 'excursion_type') {

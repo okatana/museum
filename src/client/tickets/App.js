@@ -5,6 +5,7 @@ import {screens} from '../components/TicketsStore';
 import DatesScreen from './screens/DatesScreen';
 import TimesScreen from './screens/TimesScreen';
 import OrderScreen from './screens/OrderScreen';
+import OrderingScreen from './screens/OrderingScreen';
 
 const App = observer(({store}) => {
   const {screen} = store;
@@ -14,6 +15,7 @@ const App = observer(({store}) => {
       {screen === screens.DATES && <DatesScreen />}
       {screen === screens.TIMES && <TimesScreen />}
       {screen === screens.ORDER && <OrderScreen />}
+      {screen === screens.ORDERING && <OrderingScreen />}
     </div>
   );
 });

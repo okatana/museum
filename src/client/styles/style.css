@@ -92,13 +92,17 @@
     color: white;
     background-color: lightgreen;
 }
+.time-billet-ordered {
+    color: white;
+    background-color: darkgreen;
+}
 .time-billet.disabled span {
     color: #aaa;
 }
 .time-billet.disabled .time-billet-available{
     background-color: #ccc;
 }
-.order-screen {
+.order-screen, .ordering-screen {
     max-width: 600px;
     margin: 0 auto;
 }
@@ -138,4 +142,21 @@
 .checkout-button:disabled {
     background-color: powderblue;
     /*color: #aaa;*/
+}
+.ordering-screen {
+
+}
+.form-element{
+    display: flex;
+}
+.form-element label{
+    width: 8em;
+}
+.form-element .required::before {
+    content: '*';
+    color: red;
+    vertical-align: super;
+}
+.error {
+    color: red;
 }

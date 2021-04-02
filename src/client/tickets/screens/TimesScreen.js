@@ -10,8 +10,8 @@ import {getExcursionsForDate} from '../../api';
 export function TimeBillet(excursion) {
   const {id, participants_limit, sold, reserved, datetime} = excursion;
   const onClick = () => {
-    store.setScreen(screens.ORDER);
     store.setSelectedExcursion(excursion);
+    store.setScreen(screens.ORDER);
   }
   const available = Math.max(participants_limit - sold - reserved, 0);
   const disabledClass = available === 0 ? 'disabled' : '';

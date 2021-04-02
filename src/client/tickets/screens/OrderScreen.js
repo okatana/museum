@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 
 import {Config} from '../../config';
 import {store, screens} from '../../components/TicketsStore';
-import {TimeBillet} from './TimesScreen';
+import {TimeBilletPassive} from '../../components/TimeBilletPassive';
 import {dateWithWeekDay, formatTime} from '../../utils';
 import BackButton from '../../components/BackButton';
 import {ticketsInfo} from '../../components/TicketsInfo';
@@ -21,8 +21,7 @@ function TicketSelect({title, price, max, color, onChange}) {
 }
 
 export default function OrderScreen() {
-  const selectedDate = store.selectedDate;
-  const selectedExcursion = store.selectedExcursion;
+  const {selectedDate, selectedExcursion, ticketsAvailable} = store;
   const {id, participants_limit, sold, reserved, datetime} = selectedExcursion;
   const available = Math.max(participants_limit - sold - reserved, 0);
 /*
@@ -40,29 +39,10 @@ export default function OrderScreen() {
   const onChange = (type, value) => {
 //    console.log('onChange() type=', type, 'value=', value);
     setTickets({...tickets, ...{[type]: value}});
-/*
-    switch (type) {
-      case 'fullcost':
-        setFullcost(value);
-        break;
-      case 'discount':
-        setDiscount(value);
-        break;
-      case 'free':
-        setFree(value);
-        break;
-    }
-*/
   }
   const ticketsSelected = () => Object.values(tickets).reduce((acc, cur) => {
     return acc + cur;
   }, 0)
-/*
-  useEffect(() => {
-    console.log('useEffect() fullcost=', fullcost);
-    setTicketsLeft(available - fullcost - discount - free);
-  }, [fullcost, discount, free]);
-*/
   useEffect(() => {
 //    console.log('useEffect() fullcost=', fullcost);
     setTicketsLeft(available - tickets.fullcost - tickets.discount - tickets.free);
@@ -70,12 +50,20 @@ export default function OrderScreen() {
       return acc + cur.price * tickets[cur.type];
     }, 0));
   }, [tickets]);
+  const onCheckout = () => {
+    store.setOrder({cost, ...tickets});
+    store.setScreen(screens.ORDERING);
+  }
+
   return (
     <div className="order-screen">
       <div className="navigation">
         <BackButton onClick={() => {store.setScreen(screens.TIMES)}}/>
         <h2 className="date-selected">{dateWithWeekDay(selectedDate)}</h2>
-        {TimeBillet(selectedExcursion)}
+        {TimeBilletPassive({
+          datetime: selectedExcursion.datetime,
+          ticketsAvailable: ticketsAvailable,
+        })}
       </div>
       <h3>Доступно билетов - {available}</h3>
       {ticketsInfo.map(ticketInfo => (
@@ -89,7 +77,9 @@ export default function OrderScreen() {
         <span>{cost} руб.</span>
         <span>Осталось {ticketsLeft} билетов</span>
       </div>
-      <button className="checkout-button"disabled={ticketsSelected() === 0}>Оформить</button>
+      <button className="checkout-button"disabled={ticketsSelected() === 0} onClick={onCheckout}>
+        Оформить
+      </button>
     </div>
   );
 }
