@@ -4,6 +4,7 @@ namespace MuseumTicketsPlugin;
 
 require dirname(__FILE__) . '/db/BaseController.php';
 require dirname(__FILE__) . '/db/ExcursionController.php';
+require dirname(__FILE__) . '/db/ParticipantController.php';
 
 class MuseumTicketsRoutes extends \WP_REST_Controller {
     public function getExcursionController()
@@ -11,9 +12,13 @@ class MuseumTicketsRoutes extends \WP_REST_Controller {
         return new db\ExcursionController();
     }
 
+    public function getParticipantController()
+    {
+        return new db\ParticipantController();
+    }
+
     public function register_routes() {
         $namespace = 'museum-tickets/v1';
-//        $base = '/api/';
         $base = '/';
 
         register_rest_route($namespace, $base.'test', [[
@@ -24,13 +29,25 @@ class MuseumTicketsRoutes extends \WP_REST_Controller {
         $base = '/excursion/(?P<type_id>\d+)/dates';
         register_rest_route($namespace, $base, [
             'methods'       => 'GET',
-            'callback'      => [$this->getExcursionController(), 'getAvalableDates']
+            'callback'      => [$this->getExcursionController(), 'getAvalableDates'],
+            'args'          => [],
+            'permission_callback' => function() {return true;}
         ]);
 
         $base = '/excursion/(?P<type_id>\d+)/date/(?P<date>\d\d\d\d-\d\d-\d\d)';
         register_rest_route($namespace, $base, [
             'methods'       => 'GET',
-            'callback'      => [$this->getExcursionController(), 'getExcursionsForDate']
+            'callback'      => [$this->getExcursionController(), 'getExcursionsForDate'],
+            'args'          => [],
+            'permission_callback' => function() {return true;}
+        ]);
+
+        $base = '/participant';
+        register_rest_route($namespace, $base, [
+            'methods'       => 'POST',
+            'callback'      => [$this->getParticipantController(), 'addParticipant'],
+            'args'          => [],
+            'permission_callback' => function() {return true;}
         ]);
 
     }
