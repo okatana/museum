@@ -8,13 +8,14 @@ export const screens = {
 };
 
 class Store {
-  screen = screens.DATES;
+  screen = screens.TIMES;
   selectedDate = null;
 
 
   constructor() {
     makeObservable(this, {
       screen: observable,
+      selectedDate: observable,
       setSelectedDate: action,
     });
   }

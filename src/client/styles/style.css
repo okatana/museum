@@ -160,3 +160,26 @@
 .error {
     color: red;
 }
+
+/*
+    Admin App
+ */
+.timesTable table {
+    border-collapse: collapse;
+    width: 100%;
+}
+.timesTable table th, .timesTable table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+.timesTable table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}
+.timesTable table tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+

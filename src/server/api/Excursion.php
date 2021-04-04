@@ -87,7 +87,12 @@ SQL;
                         $response = $this->getExcursionsForDate($params[0], $params[2]);
                     }
                     break;
-            }
+                case 4:
+                    if ($params[1] === 'date' && $params[3] === 'admin') {
+                        $response = $this->getExcursionsForDateAdmin($params[0], $params[2]);
+                    }
+                    break;
+               }
         if (isset($response)) {
             return $response;
         } else {
@@ -118,6 +123,34 @@ SELECT e.id, participants_limit, `when` AS datetime,
 e.fullcost_tickets+e.discount_tickets+e.free_tickets+
   SUM(IFNULL(ps.fullcost_tickets,0)+IFNULL(ps.discount_tickets,0)+IFNULL(ps.free_tickets,0)) AS sold,
 SUM(IFNULL(pr.fullcost_tickets,0)+IFNULL(pr.discount_tickets,0)+IFNULL(pr.free_tickets,0)) AS reserved
+FROM excursion e
+LEFT JOIN participant ps ON ps.excursion_id=e.id AND ps.status='sold'
+LEFT JOIN participant pr ON pr.excursion_id=e.id AND pr.status='reserved'
+WHERE type_id=? AND DATE(`when`)=? 
+GROUP BY e.id
+ORDER BY 1;
+SQL;
+        try {
+            $statement = $this->db->prepare($sql);
+            $result = $statement->execute([$type_id, $date]);
+            $result = $statement->fetchAll(\PDO::FETCH_ASSOC);
+        } catch (\PDOException $e) {
+            //exit($e->getMessage());
+            return $this->dbErrorResponse($e->getMessage());
+        }
+
+        return $this->json200Response($result);
+    }
+
+    private function getExcursionsForDateAdmin($type_id, $date) {
+        $sql = <<<SQL
+SELECT e.id, participants_limit, `when` AS datetime, 
+    e.fullcost_tickets+e.discount_tickets+e.free_tickets AS office_sold,
+    SUM(IFNULL(ps.fullcost_tickets,0)+IFNULL(ps.discount_tickets,0)+IFNULL(ps.free_tickets,0)) AS site_sold,
+    SUM(IFNULL(pr.fullcost_tickets,0)+IFNULL(pr.discount_tickets,0)+IFNULL(pr.free_tickets,0)) AS reserved,
+    e.fullcost_tickets+SUM(IFNULL(ps.fullcost_tickets,0)) AS fullcost,
+    e.discount_tickets+SUM(IFNULL(ps.discount_tickets,0)) AS discount,
+    e.free_tickets+SUM(IFNULL(ps.free_tickets,0)) AS free
 FROM excursion e
 LEFT JOIN participant ps ON ps.excursion_id=e.id AND ps.status='sold'
 LEFT JOIN participant pr ON pr.excursion_id=e.id AND pr.status='reserved'

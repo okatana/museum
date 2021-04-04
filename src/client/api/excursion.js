@@ -10,3 +10,8 @@ export function getExcursionsForDate(typeId, dateString) {
   const url = Config.apiUrl() + `excursion/${typeId}/date/${dateString}`;
   return fetchHelper(url);
 }
+
+export function getExcursionsForDateAdmin(typeId, dateString) {
+  const url = Config.apiUrl() + `excursion/${typeId}/date/${dateString}/admin`;
+  return fetchHelper(url);
+}

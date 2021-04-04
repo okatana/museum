@@ -4,10 +4,12 @@ import {observer} from 'mobx-react-lite';
 import {screens} from '../components/AdminStore';
 import AdminDatesScreen from './screen/AdminDatesScreen';
 import AdminTimesScreen from './screen/AdminTimesScreen';
+import '../styles/style.css';
 
 const App = observer(({store}) => {
   const today = new Date();
-  console.log(today.toLocaleDateString('ru-RU'));
+  console.log(today.toISOString().slice(0, 10));
+  store.setSelectedDate(today.toISOString().slice(0, 10));
   const {screen} = store;
   return (
     <div className="container">

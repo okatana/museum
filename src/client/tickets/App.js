@@ -6,9 +6,10 @@ import DatesScreen from './screens/DatesScreen';
 import TimesScreen from './screens/TimesScreen';
 import OrderScreen from './screens/OrderScreen';
 import OrderingScreen from './screens/OrderingScreen';
+import '../styles/style.css';
 
 const App = observer(({store}) => {
-  console.log('window.location', window.location);
+//  console.log('window.location', window.location);
   const {screen} = store;
   return (
     <div className="container">
