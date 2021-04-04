@@ -6,21 +6,17 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const buildDirectory = 'dist';
 const outputDirectory = `${buildDirectory}/tickets`;
-
 module.exports = () => {
-  const envPath = path.join(__dirname) + '/src/client/.env.development';
-/*
+  const envPath = path.join(__dirname) + '/.env.development';
   const env = dotenv.config({ path: envPath}).parsed;
   const envKeys = Object.keys(env).reduce((prev, next) => {
     prev[`process.env.${next}`] = JSON.stringify(env[next]);
     return prev;
   }, {});
-  console.log('envKeys=', envKeys);
-*/
 
   return {
     mode: 'development',
-    entry: './src/client/tickets/index.js',
+    entry: './src/client/admin/index.js',
     output: {
       path: path.join(__dirname, outputDirectory),
       filename: 'bundle.js',
@@ -49,19 +45,16 @@ module.exports = () => {
       ],
     },
     devServer: {
-      port: 3000,
+      port: 3001,
       open: true,
     },
     plugins: [
-//      new webpack.DefinePlugin(envKeys),
-      new webpack.DefinePlugin({
-        'process.env': JSON.stringify(dotenv.config({ path: envPath}).parsed) // it will automatically pick up key values from .env file
-      }),
+      new webpack.DefinePlugin(envKeys),
       new CleanWebpackPlugin({
         cleanOnceBeforeBuildPatterns: [path.join(__dirname, buildDirectory)],
       }),
       new HtmlWebpackPlugin({
-        template: './public/tickets/index.html',
+        template: './public/admin/index.html',
       }),
     ],
   }

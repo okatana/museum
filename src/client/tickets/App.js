@@ -8,6 +8,7 @@ import OrderScreen from './screens/OrderScreen';
 import OrderingScreen from './screens/OrderingScreen';
 
 const App = observer(({store}) => {
+  console.log('window.location', window.location);
   const {screen} = store;
   return (
     <div className="container">

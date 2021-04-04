@@ -710,3 +710,133 @@
     [free] => 0
 )
 
+2021/04/02 18:04:09 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => excursion
+    [3] => 1
+    [4] => dates
+)
+
+2021/04/02 18:04:09 processRequest(GET), Array
+(
+    [0] => excursion
+    [1] => 1
+    [2] => dates
+)
+
+2021/04/02 18:04:14 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => excursion
+    [3] => 1
+    [4] => dates
+)
+
+2021/04/02 18:04:14 processRequest(GET), Array
+(
+    [0] => excursion
+    [1] => 1
+    [2] => dates
+)
+
+2021/04/02 18:04:58 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => excursion
+    [3] => 1
+    [4] => date
+    [5] => 2021-04-03
+)
+
+2021/04/02 18:04:58 processRequest(GET), Array
+(
+    [0] => excursion
+    [1] => 1
+    [2] => date
+    [3] => 2021-04-03
+)
+
+2021/04/03 21:04:57 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => excursion
+    [3] => 1
+    [4] => dates
+)
+
+2021/04/03 21:04:57 processRequest(GET), Array
+(
+    [0] => excursion
+    [1] => 1
+    [2] => dates
+)
+
+2021/04/03 22:04:14 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => excursion
+    [3] => 1
+    [4] => dates
+)
+
+2021/04/03 22:04:14 processRequest(GET), Array
+(
+    [0] => excursion
+    [1] => 1
+    [2] => dates
+)
+
+2021/04/03 22:04:18 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => excursion
+    [3] => 1
+    [4] => dates
+)
+
+2021/04/03 22:04:18 processRequest(GET), Array
+(
+    [0] => excursion
+    [1] => 1
+    [2] => dates
+)
+
+2021/04/04 11:04:46 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => excursion
+    [3] => 1
+    [4] => dates
+)
+
+2021/04/04 11:04:46 processRequest(GET), Array
+(
+    [0] => excursion
+    [1] => 1
+    [2] => dates
+)
+
+2021/04/04 11:04:46 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => excursion
+    [3] => 1
+    [4] => dates
+)
+
+2021/04/04 11:04:46 processRequest(GET), Array
+(
+    [0] => excursion
+    [1] => 1
+    [2] => dates
+)
+

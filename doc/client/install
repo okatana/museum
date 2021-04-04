@@ -15,3 +15,6 @@ eslint-plugin-react@^7.21.5 eslint-plugin-react-hooks@^1.7.0 --save-dev --legacy
 $ npm i mobx mobx-react-lite
 
 $ npm i -D mini-css-extract-plugin
+
+$ npm i -D dotenv
+
