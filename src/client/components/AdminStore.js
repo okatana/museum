@@ -8,7 +8,8 @@ export const screens = {
 };
 
 class Store {
-  screen = screens.TIMES;
+  //screen = screens.TIMES;
+  screen = null;
   selectedDate = null;
   excursionType = null;
 

@@ -4,13 +4,16 @@ import {fetchHelper} from './index';
 
 export default class ExcursionType {
   constructor(data) {
-    Object.keys(data).map((key) => {
-      if (key ==='options') {
-        this[key] = JSON.parse(data[key]);
-      } else {
-        this[key] = data[key];
-      }
+    Object.keys(data).map((key, value) => {
+      this[key] = value;
     })
+/*
+    this.id = data.id;
+    this.name = data.name;
+    this.id = data.id;
+    this.id = data.id;
+    this.id = data.id;
+*/
   }
 
   static load(typeId) {
@@ -27,7 +30,6 @@ export default class ExcursionType {
   }
 
   getTicketsCost() {
-    console.log('this.options', this.options);
     return this.options.tickets;
   }
 }

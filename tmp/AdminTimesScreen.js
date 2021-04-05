@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from 'react';
+import { observer } from 'mobx-react-lite';
 
 import {Config} from '../../config';
 import {store, screens} from '../../components/AdminStore';
@@ -6,9 +7,8 @@ import {dateWithWeekDay, formatTime} from '../../utils';
 import {getExcursionsForDateAdmin} from '../../api';
 
 function TimeTableRow(timeData) {
-  //const {excursionType} = store.excursionType;
-  const ticketsCost = store.excursionType.getTicketsCost();
-  console.log(store.excursionType, ticketsCost);
+  const {excursionType} = store.selectedDate;
+  const ticketsCost = excursionType.getTicketsCost();
   const {datetime, office_sold, site_sold, reserved, fullcost, discount, free} = timeData;
   const cost = Number(fullcost) * ticketsCost.fullcost + Number(discount) * ticketsCost.discount;
   return (
@@ -26,14 +26,16 @@ function TimeTableRow(timeData) {
   );
 }
 
-export default function AdminTimesScreen() {
-  const selectedDate = store.selectedDate;
+function AdminTimesScreen() {
+  const {selectedDate} = store.selectedDate;
+  console.log('selectedDate', selectedDate);
   const [timesData, setTimesData] = useState([]);
   useEffect(() => {
     getExcursionsForDateAdmin(Config.excursionTypeId, selectedDate)
       .then(data => {
         //console.log('getExcursionsForDateAdmin', data);
         setTimesData(data);
+        console.log('store', store);
       })
   }, []);
 
@@ -71,3 +73,5 @@ export default function AdminTimesScreen() {
     </div>
   );
 }
+
+export default observer(({store}) => AdminTimesScreen());

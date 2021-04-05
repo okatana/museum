@@ -16,7 +16,6 @@ const App = observer(({store}) => {
       .then(excursionType => {
         console.log('excursionType', excursionType);
         store.setExcursionType(excursionType);
-        store.setScreen(screens.TIMES);
       })
       .catch(() => {
         setError(`Wrong excursionTypeId = ${Config.excursionTypeId}`);
@@ -25,14 +24,14 @@ const App = observer(({store}) => {
   const today = new Date();
   console.log(today.toISOString().slice(0, 10));
   store.setSelectedDate(today.toISOString().slice(0, 10));
-  //const {screen} = store;
+  const {screen} = store;
 
   return (
     <div className="container">
       <h1>Экскурсия. Администрирование</h1>
       {error.length > 0 && <div className="error">{error}</div>}
-      {store.screen === screens.DATES && <AdminDatesScreen />}
-      {store.screen === screens.TIMES && <AdminTimesScreen />}
+      {screen === screens.DATES && <AdminDatesScreen />}
+      {screen === screens.TIMES && <AdminTimesScreen />}
     </div>
   );
 });
