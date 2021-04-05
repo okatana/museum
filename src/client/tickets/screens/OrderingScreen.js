@@ -73,9 +73,7 @@ export default function OrderingScreen() {
       <div className="message">
         {message.length > 0 && message}
       </div>
-      <div className="error">
-        {error.length > 0 && error}
-      </div>
+      {error.length > 0 && <div className="error">{error}</div>}
     </div>
   );
 }

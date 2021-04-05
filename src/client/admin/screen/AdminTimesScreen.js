@@ -28,7 +28,7 @@ export default function AdminTimesScreen() {
   useEffect(() => {
     getExcursionsForDateAdmin(Config.excursionTypeId, selectedDate)
       .then(data => {
-        console.log(data);
+        //console.log('getExcursionsForDateAdmin', data);
         setTimesData(data);
       })
   }, []);

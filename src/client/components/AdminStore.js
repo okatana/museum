@@ -10,13 +10,15 @@ export const screens = {
 class Store {
   screen = screens.TIMES;
   selectedDate = null;
-
+  excursionType = null;
 
   constructor() {
     makeObservable(this, {
       screen: observable,
       selectedDate: observable,
+      excursionType: observable,
       setSelectedDate: action,
+      setExcursionType: action,
     });
   }
 
@@ -27,6 +29,10 @@ class Store {
 
   setSelectedDate(date) {
     this.selectedDate = date;
+  }
+
+  setExcursionType(excursionType) {
+    this.excursionType = excursionType;
   }
 
 }
