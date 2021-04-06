@@ -5,6 +5,7 @@ import {assert} from '../utils';
 export const screens = {
   DATES: 'DATES',
   TIMES: 'TIMES',
+  EXCURSION: 'EXCURSION'
 };
 
 class Store {
@@ -12,6 +13,7 @@ class Store {
   screen = null;
   selectedDate = null;
   excursionType = null;
+  excursionData = observable({}, {proxy: false});
 
   constructor() {
     makeObservable(this, {
@@ -20,6 +22,7 @@ class Store {
       excursionType: observable,
       setSelectedDate: action,
       setExcursionType: action,
+      setExcursionData: action,
     });
   }
 
@@ -34,6 +37,11 @@ class Store {
 
   setExcursionType(excursionType) {
     this.excursionType = excursionType;
+  }
+
+  setExcursionData(excursionData) {
+    console.log('STORE setExcursionData', excursionData);
+    this.excursionData = excursionData;
   }
 
 }

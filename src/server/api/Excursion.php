@@ -80,19 +80,22 @@ SQL;
             case 2:
                 if ($params[1] === 'dates') {
                     $response = $this->getAvalableDates($params[0]);
+                } else
+                if ($params[1] === 'participants') {
+                    $response = $this->getExcursionParticipants($params[0]);
+                } else
+                break;
+            case 3:
+                if ($params[1] === 'date') {
+                    $response = $this->getExcursionsForDate($params[0], $params[2]);
                 }
                 break;
-                case 3:
-                    if ($params[1] === 'date') {
-                        $response = $this->getExcursionsForDate($params[0], $params[2]);
-                    }
-                    break;
-                case 4:
-                    if ($params[1] === 'date' && $params[3] === 'admin') {
-                        $response = $this->getExcursionsForDateAdmin($params[0], $params[2]);
-                    }
-                    break;
-               }
+            case 4:
+                if ($params[1] === 'date' && $params[3] === 'admin') {
+                    $response = $this->getExcursionsForDateAdmin($params[0], $params[2]);
+                }
+                break;
+           }
         if (isset($response)) {
             return $response;
         } else {
@@ -108,6 +111,22 @@ SQL;
         try {
             $statement = $this->db->prepare($sql);
             $result = $statement->execute([$type_id]);
+            $result = $statement->fetchAll(\PDO::FETCH_ASSOC);
+        } catch (\PDOException $e) {
+            //exit($e->getMessage());
+            return $this->dbErrorResponse($e->getMessage());
+        }
+
+        return $this->json200Response($result);
+    }
+
+    private function getExcursionParticipants($excursion_id) {
+        $sql = <<<SQL
+SELECT * FROM participant where excursion_id=? ORDER BY lastname, firstname;
+SQL;
+        try {
+            $statement = $this->db->prepare($sql);
+            $result = $statement->execute([$excursion_id]);
             $result = $statement->fetchAll(\PDO::FETCH_ASSOC);
         } catch (\PDOException $e) {
             //exit($e->getMessage());

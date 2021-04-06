@@ -164,22 +164,22 @@
 /*
     Admin App
  */
-.timesTable table {
+.admin-table table {
     border-collapse: collapse;
     width: 100%;
 }
-.timesTable table th, .timesTable table td {
+.admin-table table th, .admin-table table td {
     border: 1px solid #ddd;
     padding: 8px;
+    text-align: center;
 }
-.timesTable table th {
+.admin-table table th {
     padding-top: 12px;
     padding-bottom: 12px;
-    text-align: left;
     background-color: #4CAF50;
     color: white;
 }
-.timesTable table tr:nth-child(even){
+.admin-table table tr:nth-child(even){
     background-color: #f2f2f2;
 }
 

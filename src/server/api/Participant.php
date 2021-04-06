@@ -29,7 +29,6 @@ class Participant extends BaseController{
 
     private function processGet($params)
     {
-
     }
 
     private function processPost($params)

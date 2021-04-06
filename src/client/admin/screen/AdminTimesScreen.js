@@ -5,14 +5,14 @@ import {store, screens} from '../../components/AdminStore';
 import {dateWithWeekDay, formatTime} from '../../utils';
 import {getExcursionsForDateAdmin} from '../../api';
 
-function TimeTableRow(timeData) {
+function TimeTableRow(timeData, onRowClick) {
   //const {excursionType} = store.excursionType;
   const ticketsCost = store.excursionType.getTicketsCost();
   console.log(store.excursionType, ticketsCost);
-  const {datetime, office_sold, site_sold, reserved, fullcost, discount, free} = timeData;
+  const {id, datetime, office_sold, site_sold, reserved, fullcost, discount, free} = timeData;
   const cost = Number(fullcost) * ticketsCost.fullcost + Number(discount) * ticketsCost.discount;
   return (
-    <tr key={datetime}>
+    <tr key={id} onClick={() => onRowClick({id, datetime})}>
       <td>{formatTime(datetime)}</td>
       <td>{Number(office_sold) + Number(site_sold)}</td>
       <td>{office_sold}</td>
@@ -37,6 +37,20 @@ export default function AdminTimesScreen() {
       })
   }, []);
 
+  const onRowClick = (excursionData) => {
+    console.log('onRowClick ', excursionData);
+    store.setExcursionData(excursionData);
+    store.setScreen(screens.EXCURSION);
+  }
+/*
+
+  const onRowClick = ({id, datetime}) => {
+    console.log('onRowClick ', {id, datetime});
+    store.setExcursionData({id, datetime});
+    store.setScreen(screens.EXCURSION);
+  }
+*/
+
   return (
     <div className="times-screen">
       <div className="navigation">
@@ -45,12 +59,12 @@ export default function AdminTimesScreen() {
         <div></div>
       </div>
       <h3>Проданные билеты</h3>
-      <div className="timesTable">
+      <div className="admin-table">
         <table>
           <thead>
             <tr>
               <th rowSpan={2}>Время</th>
-              <th colSpan={8}>Билетов</th>
+              <th colSpan={8}>Продано билетов</th>
             </tr>
             <tr>
               <th>всего</th>
@@ -64,7 +78,7 @@ export default function AdminTimesScreen() {
             </tr>
           </thead>
           <tbody>
-          {timesData.map(timeData => TimeTableRow(timeData))}
+          {timesData.map(timeData => TimeTableRow(timeData, onRowClick))}
           </tbody>
         </table>
       </div>

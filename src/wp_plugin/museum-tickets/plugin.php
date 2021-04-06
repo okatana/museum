@@ -14,3 +14,5 @@ function mt_plugin_load() {
 }
 
 add_action('plugins_loaded', 'mt_plugin_load');
+
+require_once 'rest-plugin.php';
