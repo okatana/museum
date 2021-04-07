@@ -3,6 +3,7 @@ import {makeObservable, action, computed, observable, runInAction} from "mobx";
 import {assert} from '../utils';
 
 export const screens = {
+  MAIN: 'MAIN',
   DATES: 'DATES',
   TIMES: 'TIMES',
   EXCURSION: 'EXCURSION'

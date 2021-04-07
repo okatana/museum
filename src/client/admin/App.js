@@ -5,6 +5,7 @@ import {screens} from '../components/AdminStore';
 import AdminDatesScreen from './screen/AdminDatesScreen';
 import AdminTimesScreen from './screen/AdminTimesScreen';
 import AdminExcursionScreen from './screen/AdminExcursionScreen';
+import AdminMainScreen from './screen/AdminMainScreen';
 import ExcursionType from '../api/ExcursionType';
 import '../styles/style.css';
 import {Config} from '../config';
@@ -17,7 +18,7 @@ const App = observer(({store}) => {
       .then(excursionType => {
         console.log('excursionType', excursionType);
         store.setExcursionType(excursionType);
-        store.setScreen(screens.TIMES);
+        store.setScreen(screens.MAIN);
       })
       .catch(() => {
         setError(`Wrong excursionTypeId = ${Config.excursionTypeId}`);
@@ -30,8 +31,9 @@ const App = observer(({store}) => {
 
   return (
     <div className="container">
-      <h1>Экскурсия. Администрирование</h1>
+      <h1>Экскурсии. Администрирование</h1>
       {error.length > 0 && <div className="error">{error}</div>}
+      {store.screen === screens.MAIN && <AdminMainScreen />}
       {store.screen === screens.DATES && <AdminDatesScreen />}
       {store.screen === screens.TIMES && <AdminTimesScreen />}
       {store.screen === screens.EXCURSION && <AdminExcursionScreen />}

@@ -42,14 +42,6 @@ export default function AdminTimesScreen() {
     store.setExcursionData(excursionData);
     store.setScreen(screens.EXCURSION);
   }
-/*
-
-  const onRowClick = ({id, datetime}) => {
-    console.log('onRowClick ', {id, datetime});
-    store.setExcursionData({id, datetime});
-    store.setScreen(screens.EXCURSION);
-  }
-*/
 
   return (
     <div className="times-screen">
