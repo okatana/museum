@@ -4,6 +4,7 @@ import {assert} from '../utils';
 
 export const screens = {
   MAIN: 'MAIN',
+  TYPES: 'TYPES',
   DATES: 'DATES',
   TIMES: 'TIMES',
   EXCURSION: 'EXCURSION'

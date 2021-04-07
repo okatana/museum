@@ -12,7 +12,7 @@ class Excursion extends BaseController{
         $this->log("processRequest($method), ".print_r($params, true));
         $mainToken = $params[0];
         array_splice($params, 0, 1);
-        if ($mainToken === 'excursion_type') {
+        if ($mainToken === 'excursion_type' || $mainToken === 'excursion_types') {
             $response = $this->processExcursionType($method, $params);            
         } else {
             switch ($method) {
@@ -48,12 +48,23 @@ class Excursion extends BaseController{
 
     private function getAllExcursionTypes()
     {
+        $sql = <<<SQL
+SELECT * FROM excursion_type
+SQL;
+        try {
+            $statement = $this->db->prepare($sql);
+            $result = $statement->execute();
+            $result = $statement->fetchAll(\PDO::FETCH_ASSOC);
+        } catch (\PDOException $e) {
+            return $this->dbErrorResponse($e->getMessage());
+        }
 
+        return $this->json200Response($result);
     }
 
     private function getExcursionType($type_id)
     {
-        $this->log("getExcursionType($type_id)");
+//        $this->log("getExcursionType($type_id)");
         $sql = <<<SQL
 SELECT * FROM excursion_type WHERE id=?
 SQL;

@@ -6,7 +6,6 @@ import {dateWithWeekDay, formatTime} from '../../utils';
 import {getExcursionsForDateAdmin} from '../../api';
 
 function TimeTableRow(timeData, onRowClick) {
-  //const {excursionType} = store.excursionType;
   const ticketsCost = store.excursionType.getTicketsCost();
   console.log(store.excursionType, ticketsCost);
   const {id, datetime, office_sold, site_sold, reserved, fullcost, discount, free} = timeData;

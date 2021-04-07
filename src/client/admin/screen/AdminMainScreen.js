@@ -1,13 +1,14 @@
 import React, {useEffect, useState} from 'react';
 
+import {screens, store} from '../../components/AdminStore';
 import MenuButton from '../../components/MenuButton';
 
 export default function AdminMainScreen() {
 
-  const onTypesClick = () => {};
+  const onTypesClick = () => {store.setScreen(screens.TYPES)};
   const onScheduleClick = () => {};
   const onDatesClick = () => {};
-  const onTodayClick = () => {};
+  const onTodayClick = () => {store.setScreen(screens.TIMES)};
 
   return (
     <div className="main-screen">

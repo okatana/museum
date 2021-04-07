@@ -33,6 +33,7 @@ switch ($mainToken) {
     case 'excursion':
     case 'excursions':
     case 'excursion_type':
+    case 'excursion_types':
         $controller = new Excursion($dbConnection);
         $controller->processRequest($requestMethod, $uri);
         break;

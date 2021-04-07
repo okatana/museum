@@ -1,7 +1,6 @@
 import {Config} from '../config';
 import {fetchHelper} from './index';
 
-
 export default class ExcursionType {
   constructor(data) {
     Object.keys(data).map((key) => {
@@ -26,8 +25,13 @@ export default class ExcursionType {
       });
   }
 
+  static getExcursionTypes() {
+    const url = Config.apiUrl() + `excursion_types`;
+    return fetchHelper(url);
+  }
+
   getTicketsCost() {
-    console.log('this.options', this.options);
+    //console.log('this.options', this.options);
     return this.options.tickets;
   }
 }

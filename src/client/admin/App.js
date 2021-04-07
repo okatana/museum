@@ -6,6 +6,8 @@ import AdminDatesScreen from './screen/AdminDatesScreen';
 import AdminTimesScreen from './screen/AdminTimesScreen';
 import AdminExcursionScreen from './screen/AdminExcursionScreen';
 import AdminMainScreen from './screen/AdminMainScreen';
+import AdminTypesScreen from './screen/AdminTypesScreen';
+
 import ExcursionType from '../api/ExcursionType';
 import '../styles/style.css';
 import {Config} from '../config';
@@ -34,6 +36,7 @@ const App = observer(({store}) => {
       <h1>Экскурсии. Администрирование</h1>
       {error.length > 0 && <div className="error">{error}</div>}
       {store.screen === screens.MAIN && <AdminMainScreen />}
+      {store.screen === screens.TYPES && <AdminTypesScreen />}
       {store.screen === screens.DATES && <AdminDatesScreen />}
       {store.screen === screens.TIMES && <AdminTimesScreen />}
       {store.screen === screens.EXCURSION && <AdminExcursionScreen />}
