@@ -2,8 +2,23 @@ import React, {useEffect, useState} from 'react';
 import BackButton from '../../components/BackButton';
 import {screens, store} from '../../components/AdminStore';
 import ExcursionType from '../../api/ExcursionType';
+import EscursionTypeView from './EscursionTypeView';
 import {Config} from '../../config';
 import {formatTime} from '../../utils';
+
+export function displayScheduleType(schedule_type) {
+  switch (schedule_type) {
+    case 'grid':
+      return 'стандартное';
+    case 'custom':
+      return 'произвольное';
+    default:
+      return '';
+  }
+}
+export function ticketsCost(tickets) {
+  return tickets.fullcost + ' / ' + tickets.discount;
+}
 
 function TypeTableRow(typeData, onRowClick) {
   const {id, name, description, participants, schedule_type, date_from, date_to} = typeData;
@@ -15,24 +30,14 @@ function TypeTableRow(typeData, onRowClick) {
     }
     return '';
   };
-  const type = () => {
-    switch (schedule_type) {
-      case 'grid':
-        return 'стандартное';
-      case 'custom':
-        return 'произвольное';
-      default:
-        return '';
-    }
-  }
-  const ticketsCost = () => options.tickets.fullcost + ' / ' + options.tickets.discount;
+//  const ticketsCost = () => options.tickets.fullcost + ' / ' + options.tickets.discount;
   return (
     <tr key={id} onClick={() => onRowClick(typeData)}>
       <td>{name}</td>
       <td>{descr()}</td>
       <td>{participants}</td>
-      <td>{type()}</td>
-      <td>{ticketsCost()}</td>
+      <td>{ticketsCost(options.tickets)}</td>
+      <td>{displayScheduleType(schedule_type)}</td>
       <td>{date_from}</td>
       <td>{date_to}</td>
     </tr>
@@ -42,6 +47,7 @@ function TypeTableRow(typeData, onRowClick) {
 
 export default function AdminTypesScreen() {
   const [typesData, setTypesData] = useState([]);
+  const [selectedType, setSelectedType] = useState(null);
   useEffect(() => {
     ExcursionType.getExcursionTypes()
       .then(data => {
@@ -52,6 +58,7 @@ export default function AdminTypesScreen() {
 
   const onRowClick = (typeData) => {
     console.log('onRowClick ', typeData);
+    setSelectedType(typeData);
   }
 
 
@@ -69,8 +76,8 @@ export default function AdminTypesScreen() {
             <th>Наименование</th>
             <th>Описание</th>
             <th>Участников</th>
-            <th>Тип расписания</th>
             <th>Цена билетов</th>
+            <th>Тип расписания</th>
             <th>Действует с</th>
             <th>Действует по</th>
           </tr>
@@ -80,6 +87,12 @@ export default function AdminTypesScreen() {
           </tbody>
         </table>
       </div>
+      {!selectedType &&
+        <p>(Выберите тип (строку в таблице) для просмотра и редактирования)</p>
+      }
+      {selectedType &&
+        <EscursionTypeView typeData={selectedType} />
+      }
 
     </div>
   );

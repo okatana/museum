@@ -150,12 +150,15 @@
     display: flex;
 }
 .form-element label{
-    width: 8em;
+    width: 10em;
 }
 .form-element .required::before {
     content: '*';
     color: red;
     vertical-align: super;
+}
+.form-element input, .form-element textarea{
+    width: 100%;
 }
 .error {
     color: red;
@@ -183,3 +186,10 @@
     background-color: #f2f2f2;
 }
 
+.excursion-type-view {
+    background-color: #eee;
+    margin-top: 1em;
+}
+.excursion-type-view td{
+    padding: 2px 4px;
+}

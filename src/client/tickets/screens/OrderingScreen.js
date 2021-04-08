@@ -4,16 +4,7 @@ import {screens, store} from '../../components/TicketsStore';
 import {dateWithWeekDay} from '../../utils';
 import {TimeBilletPassive} from '../../components/TimeBilletPassive';
 import {addParticipant} from '../../api';
-
-function FormTextElement({label, required, onChange, defaultValue}) {
-
-  return (
-    <div className="form-element">
-      <label>{label}{required && <span className="required" />}: </label>
-      <input type="text" onChange={event => onChange(event.target.value)} defaultValue={defaultValue} />
-    </div>
-  );
-}
+import FormTextElement from '../../components/form/FormTextElement';
 
 export default function OrderingScreen() {
   const {selectedDate, selectedExcursion, ticketsOrdered, order} = store;
