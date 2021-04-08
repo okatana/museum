@@ -150,12 +150,12 @@
     display: flex;
 }
 .form-element label{
-    width: 10em;
+    width: 12em;
 }
 .form-element .required::before {
     content: '*';
     color: red;
-    vertical-align: super;
+    vertical-align: text-top;
 }
 .form-element input, .form-element textarea{
     width: 100%;
