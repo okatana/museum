@@ -19,6 +19,9 @@ class Excursion extends BaseController{
                 case 'GET':
                     $response = $this->processGet($params);
                     break;
+                case 'POST':
+                    $response = $this->processPost($params);
+                    break;
                 default:
                     $response = $this->notFoundResponse();
             }
@@ -62,12 +65,12 @@ SQL;
             $statement = $this->db->prepare($sql);
             $result = $statement->execute([
                 'id' => $id,
-                'name' => $input[name],
-                'description' => $input[description],
-                'participants' => $input[participants],
-                'options' => json_encode($input[options]),
-                'date_from' => $input[date_from],
-                'date_to' => $input[date_to],
+                'name' => $input['name'],
+                'description' => $input['description'],
+                'participants' => $input['participants'],
+                'options' => json_encode($input['options']),
+                'date_from' => $input['date_from'],
+                'date_to' => $input['date_to'],
             ]);
         } catch (\PDOException $e) {
             //exit($e->getMessage());
@@ -102,10 +105,9 @@ SQL;
             $statement = $this->db->prepare($sql);
             $result = $statement->execute([$type_id]);
             if ($result) {
-                $result = $statement->fetch(\PDO::FETCH_ASSOC); 
-//                $this->log('getExcursionType() $result='. print_r($result, true));    
+                $result = $statement->fetch(\PDO::FETCH_ASSOC);
             } else {
-                exit(print_r($statement->errorInfo(), true));
+                return $this->dbErrorResponse(print_r($statement->errorInfo(), true));
             }
         } catch (\PDOException $e) {
             //exit($e->getMessage());
@@ -142,6 +144,125 @@ SQL;
         } else {
             return $this->badRequestResponse();
         }
+    }
+
+    private function processPost($params)
+    {
+        switch (count($params)) {
+            case 1:
+                if ($params[0] === 'schedule') {
+                    $response = $this->addScheduledExcurions();
+                }
+                break;
+        }
+        return $response;
+    }
+
+    private function addScheduledExcurions()
+    {
+        $input = (array) json_decode(file_get_contents('php://input'), TRUE);
+        $this->log(print_r($input, true));
+        $type_id = $input['typeId'];
+
+        $sql = <<<SQL
+SELECT options, participants FROM excursion_type WHERE id=?
+SQL;
+        try {
+            $statement = $this->db->prepare($sql);
+            $result = $statement->execute([$type_id]);
+            if ($result) {
+                //$result = $statement->fetchAll();
+                $excursionType = $statement->fetchObject();
+                //$this->log('$result='.print_r($result, true));
+                $options = json_decode($excursionType->options);
+                $this->log('$options='.print_r($options, true));
+                $timeStart = $options->schedule->timeStart;
+                $timeEnd = $options->schedule->timeEnd;
+                $pattern = '/^(\d\d):(\d\d)/';
+                $error = false;
+                if (preg_match($pattern, $timeStart, $matches)) {
+                    $timeStartHours = intval($matches[1]);
+                    $timeStartMinutes = intval($matches[2]);
+                    $this->log("1 $timeStartHours $timeStartMinutes");
+                    $error = !($timeStartHours < 24 && $timeStartMinutes <60);
+                } else {
+                    $error = true;
+                }
+                if ($error) {
+                    $error = "Invalid timeStart=$timeStart";
+                }
+                if (!$error) {
+                    if (preg_match($pattern, $timeEnd, $matches)) {
+                        $timeEndHours = intval($matches[1]);
+                        $timeEndMinutes = intval($matches[2]);
+                        $this->log("2 $timeEndHours $timeEndMinutes");
+
+                        $error = !($timeEndHours < 24 && $timeEndMinutes < 60 &&
+                            ($timeEndHours > $timeStartHours ||
+                                $timeEndHours == $timeStartHours && $timeEndMinutes > $timeStartMinutes));
+                    } else {
+                        $error = true;
+                    }
+                    if ($error) {
+                        $error = "Invalid timeEnd=$timeEnd";
+                    }
+                }
+                if ($error) {
+                    return $this->badRequestResponse($error);
+                }
+                $interval = $options->schedule->interval;
+            } else {
+                return $this->dbErrorResponse(print_r($statement->errorInfo(), true));
+            }
+        } catch (\PDOException $e) {
+            return $this->dbErrorResponse($e->getMessage());
+        }
+
+        $sql = <<<SQL
+INSERT IGNORE excursion
+(`when`, type_id, participants_limit, guide_id)
+VALUES (:when, :type_id, :participants, 1)
+SQL;
+        try {
+            $statement = $this->db->prepare($sql);
+            $dateFrom = new \DateTime($input['dateFrom']);
+            $dateTo = new \DateTime($input['dateTo']);
+            $dateTo->setTime($timeEndHours, $timeEndMinutes);
+            $dateTime = clone $dateFrom;
+            $dateTime->setTime($timeStartHours, $timeStartMinutes);
+            $dateInterval = \DateInterval::createFromDateString('1 day');
+            $timeInterval = \DateInterval::createFromDateString("$interval minutes");
+            $counter = 0;
+            do {
+                $dateTimeEnd = clone $dateTime;
+                $dateTimeEnd->setTime($timeEndHours, $timeEndMinutes);
+                do {
+                    $this->log($dateTime->format('Y-m-d H:i'));
+                    $result = $statement->execute([
+                        'type_id' => $type_id,
+                        'when' => $dateTime->format('Y-m-d H:i'),
+                        'participants' => $excursionType->participants,
+                    ]);
+                    if ($result) {
+                        $this->log('excursion added = '.$statement->rowCount());
+                        $counter += $statement->rowCount();
+                    } else {
+                        $this->log('excursion add failed');
+                    }
+                    $dateTime->add($timeInterval);
+                } while($dateTime <= $dateTimeEnd);
+                $dateTime->setTime($timeStartHours, $timeStartMinutes);
+                $dateTime->add($dateInterval);
+            } while ($dateTime <= $dateTo);
+            //return $this->dbErrorResponse('not implemented');
+
+        } catch (\PDOException $e) {
+            //exit($e->getMessage());
+            return $this->dbErrorResponse($e->getMessage());
+        } catch (\Exception $e) {
+            return $this->dbErrorResponse($e->getMessage());
+        }
+        return $this->json200Response("Добавлено экскурсий $counter");
     }
 
     private function getAvalableDates($type_id) {
@@ -188,7 +309,7 @@ LEFT JOIN participant ps ON ps.excursion_id=e.id AND ps.status='sold'
 LEFT JOIN participant pr ON pr.excursion_id=e.id AND pr.status='reserved'
 WHERE type_id=? AND DATE(`when`)=? 
 GROUP BY e.id
-ORDER BY 1;
+ORDER BY datetime;
 SQL;
         try {
             $statement = $this->db->prepare($sql);

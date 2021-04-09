@@ -4,6 +4,7 @@ import {Config} from '../../config';
 import {store, screens} from '../../components/AdminStore';
 import {dateWithWeekDay, formatTime} from '../../utils';
 import {getExcursionsForDateAdmin} from '../../api';
+import BackButton from '../../components/BackButton';
 
 function TimeTableRow(timeData, onRowClick) {
   const ticketsCost = store.excursionType.getTicketsCost();
@@ -45,7 +46,7 @@ export default function AdminTimesScreen() {
   return (
     <div className="times-screen">
       <div className="navigation">
-        <div></div>
+        <BackButton onClick={() => {store.setScreen(screens.MAIN)}}/>
         <h2 className="date-selected">{dateWithWeekDay(selectedDate)}</h2>
         <div></div>
       </div>

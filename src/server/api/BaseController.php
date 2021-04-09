@@ -32,10 +32,10 @@ class BaseController {
         return $response;
     }
 
-    protected function badRequestResponse()
+    protected function badRequestResponse($message = null)
     {
       $response['status_code_header'] = 'HTTP/1.1 400 Bad Request';
-      $response['body'] = null;
+      $response['body'] = $message;
       return $response;
     }  
 

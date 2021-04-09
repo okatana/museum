@@ -6,7 +6,7 @@ import MenuButton from '../../components/MenuButton';
 export default function AdminMainScreen() {
 
   const onTypesClick = () => {store.setScreen(screens.TYPES)};
-  const onScheduleClick = () => {};
+  const onScheduleClick = () => {store.setScreen(screens.SCHEDULE)};
   const onDatesClick = () => {};
   const onTodayClick = () => {store.setScreen(screens.TIMES)};
 

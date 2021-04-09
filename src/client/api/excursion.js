@@ -1,5 +1,5 @@
 import {Config} from '../config';
-import {fetchHelper} from './index';
+import {fetchHelper, fetchPostHelper} from './index';
 
 export function getExcursionDates(typeId) {
   const url = Config.apiUrl() + `excursion/${typeId}/dates`;
@@ -14,4 +14,9 @@ export function getExcursionsForDate(typeId, dateString) {
 export function getExcursionsForDateAdmin(typeId, dateString) {
   const url = Config.apiUrl() + `excursion/${typeId}/date/${dateString}/admin`;
   return fetchHelper(url);
+}
+
+export function addScheduledExcurions(scheduleData) {
+  const url = Config.apiUrl() + 'excursions/schedule';
+  return fetchPostHelper(url, scheduleData);
 }

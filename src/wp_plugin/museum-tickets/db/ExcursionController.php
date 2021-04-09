@@ -38,7 +38,7 @@ LEFT JOIN participant ps ON ps.excursion_id=e.id AND ps.status='sold'
 LEFT JOIN participant pr ON pr.excursion_id=e.id AND pr.status='reserved'
 WHERE type_id=%d AND DATE(`when`)='%s' 
 GROUP BY e.id
-ORDER BY 1;
+ORDER BY datetime;
 SQL;
         try {
             $result = $wpdb->get_results($wpdb->prepare($sql, $type_id, $date));

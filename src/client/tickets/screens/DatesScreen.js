@@ -27,6 +27,7 @@ export default function DatesScreen() {
         setDates(data.map(dateObject => dateObject.date));
       })
   }, []);
+
   return (
     <>
       <TicketsInfo />

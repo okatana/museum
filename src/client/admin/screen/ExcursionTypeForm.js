@@ -33,10 +33,9 @@ export default function EscursionTypeForm({typeData}) {
   }, []);
 
   useEffect(() => {
-    const oldReady = ready;
     const newReady = name.trim().length>0 && timeStart.trim().length>0 && timeEnd.trim().length>0
       && participants>0 && fullcost>0 && discount>0 && interval;
-    if (oldReady !== newReady) {
+    if (ready !== newReady) {
       setReady(newReady);
     }
   }, [name, participants, fullcost, discount, timeStart, timeEnd, interval]);
@@ -82,11 +81,11 @@ export default function EscursionTypeForm({typeData}) {
         </div>
         {typeData.schedule_type === 'grid' &&
           <>
-          <FormTextElement label="время начала" required={true} defaultValue={timeStart}
+          <FormTextElement label="время начала" required={true} value={timeStart}
                            placeholder="чч:мм" onChange={setTimeStart} />
-          <FormTextElement label="время окончания" required={true} defaultValue={timeEnd}
+          <FormTextElement label="время окончания" required={true} value={timeEnd}
                            placeholder="чч:мм" onChange={setTimeEnd} />
-          <FormTextElement label="интервал" required={true} defaultValue={interval}
+          <FormTextElement label="интервал" required={true} value={interval}
                            onChange={setInterval} />
           </>
         }

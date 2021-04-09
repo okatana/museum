@@ -53,6 +53,9 @@ export default function AdminTypesScreen() {
       .then(data => {
         console.log('getExcursionTypes', data);
         setTypesData(data);
+        if (data.length == 1) {
+          setSelectedType(data[0]);
+        }
       })
   }, []);
 

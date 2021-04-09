@@ -1,4 +1,4 @@
-import {getExcursionDates, getExcursionsForDate, getExcursionsForDateAdmin} from './excursion';
+import {getExcursionDates, getExcursionsForDate, getExcursionsForDateAdmin, addScheduledExcurions} from './excursion';
 import {addParticipant, getExcursionParticipants} from './participant';
 
 export function fetchHelper(url) {
@@ -44,4 +44,5 @@ export function fetchPostHelper(url, data, method='POST') {
   )
 }
 
-export {getExcursionDates, getExcursionsForDate, getExcursionsForDateAdmin, addParticipant, getExcursionParticipants};
+export {getExcursionDates, getExcursionsForDate, getExcursionsForDateAdmin, addScheduledExcurions,
+  addParticipant, getExcursionParticipants};

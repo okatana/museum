@@ -7,7 +7,8 @@ export const screens = {
   TYPES: 'TYPES',
   DATES: 'DATES',
   TIMES: 'TIMES',
-  EXCURSION: 'EXCURSION'
+  EXCURSION: 'EXCURSION',
+  SCHEDULE: 'SCHEDULE',
 };
 
 class Store {

@@ -4,6 +4,7 @@ import {store, screens} from '../../components/AdminStore';
 import {dateWithWeekDay, formatTime, formatDate} from '../../utils';
 import {getExcursionParticipants} from '../../api';
 import {Config} from '../../config';
+import BackButton from '../../components/BackButton';
 
 
 function ParticipantTableRow(participantData, onRowClick) {
@@ -47,7 +48,7 @@ export default function AdminExcursionScreen() {
   return (
     <div className="excursion-screen">
       <div className="navigation">
-        <div></div>
+        <BackButton onClick={() => {store.setScreen(screens.TIMES)}}/>
         <h2 className="date-selected">{dateWithWeekDay(selectedDate)}</h2>
         <h2 className="time-selected">{formatTime(excursionData.datetime)}</h2>
       </div>
