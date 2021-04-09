@@ -8,21 +8,21 @@ export const ticketsInfo = [
     title: 'Взрослый билет',
     description: '',
     price: 400,
-    color: '#3E66FB',
+    color: '#ffffff',
   },
   {
     type: 'discount',
     title: 'Льготный билет',
     description: 'Школьники, студенты, инвалиды, пенсионеры',
     price: 300,
-    color: '#4DCD80',
+    color: '#ffffff',
   },
   {
     type: 'free',
     title: 'Дети до 5 лет',
     description: '',
     price: 0,
-    color: '#F081D8',
+    color: '#ffffff',
   },
 ];
 

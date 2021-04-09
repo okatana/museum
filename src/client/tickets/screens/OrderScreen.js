@@ -5,7 +5,7 @@ import {store, screens} from '../../components/TicketsStore';
 import {TimeBilletPassive} from '../../components/TimeBilletPassive';
 import {dateWithWeekDay, formatTime} from '../../utils';
 import BackButton from '../../components/BackButton';
-import {ticketsInfo} from '../../components/TicketsInfo';
+import TicketsInfo, {ticketsInfo} from '../../components/TicketsInfo';
 import NumberIncrementDecrement from '../../components/NumberIncrementDecrement';
 
 
@@ -56,16 +56,16 @@ export default function OrderScreen() {
   }
 
   return (
-    <div className="order-screen">
+    <div className="order-screen"><TicketsInfo/>
       <div className="navigation">
         <BackButton onClick={() => {store.setScreen(screens.TIMES)}}/>
-        <h2 className="date-selected">{dateWithWeekDay(selectedDate)}</h2>
+        <h3 className="date-selected">{dateWithWeekDay(selectedDate)}</h3>
         {TimeBilletPassive({
           datetime: selectedExcursion.datetime,
           ticketsAvailable: ticketsAvailable,
         })}
       </div>
-      <h3>Доступно билетов - {available}</h3>
+      <h2>Доступно билетов - {available}</h2>
       {ticketsInfo.map(ticketInfo => (
         <TicketSelect key={ticketInfo.type}
           title={ticketInfo.title}

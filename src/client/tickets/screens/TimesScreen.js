@@ -5,6 +5,7 @@ import {store, screens} from '../../components/TicketsStore';
 import BackButton from '../../components/BackButton';
 import {dateWithWeekDay, formatTime} from '../../utils';
 import {getExcursionsForDate} from '../../api';
+import TicketsInfo from '../../components/TicketsInfo';
 
 //function TimeBillet({excursionId, ticketsAvailable, timeString}) {
 export function TimeBillet(excursion) {
@@ -36,12 +37,13 @@ export default function TimesScreen() {
 
   return (
     <div className="times-screen">
+      <TicketsInfo />
       <div className="navigation">
         <BackButton onClick={() => {store.setScreen(screens.DATES)}}/>
-        <h2 className="date-selected">{dateWithWeekDay(selectedDate)}</h2>
+        <h3 className="date-selected">{dateWithWeekDay(selectedDate)}</h3>
         <div></div>
       </div>
-      <h3>Выберите время</h3>
+      <h2>Выберите время</h2>
       <div className="time-billets">
         {times.map(excursion => (TimeBillet(excursion)))}
       </div>
