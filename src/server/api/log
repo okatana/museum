@@ -6796,3 +6796,332 @@
     [0] => excursion_types
 )
 
+2021/04/09 07:04:56 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => excursion_type
+    [3] => 1
+)
+
+2021/04/09 07:04:56 processRequest(GET), Array
+(
+    [0] => excursion_type
+    [1] => 1
+)
+
+2021/04/09 08:04:01 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => excursion_type
+    [3] => 1
+)
+
+2021/04/09 08:04:01 processRequest(GET), Array
+(
+    [0] => excursion_type
+    [1] => 1
+)
+
+2021/04/09 08:04:04 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => excursion_types
+)
+
+2021/04/09 08:04:04 processRequest(GET), Array
+(
+    [0] => excursion_types
+)
+
+2021/04/09 08:04:52 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => excursion_type
+    [3] => 1
+)
+
+2021/04/09 08:04:52 processRequest(GET), Array
+(
+    [0] => excursion_type
+    [1] => 1
+)
+
+2021/04/09 08:04:14 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => excursion_type
+    [3] => 1
+)
+
+2021/04/09 08:04:14 processRequest(GET), Array
+(
+    [0] => excursion_type
+    [1] => 1
+)
+
+2021/04/09 08:04:52 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => excursion_type
+    [3] => 1
+)
+
+2021/04/09 08:04:52 processRequest(GET), Array
+(
+    [0] => excursion_type
+    [1] => 1
+)
+
+2021/04/09 09:04:03 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => excursion_types
+)
+
+2021/04/09 09:04:03 processRequest(GET), Array
+(
+    [0] => excursion_types
+)
+
+2021/04/09 09:04:43 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => excursion_type
+    [3] => 1
+)
+
+2021/04/09 09:04:43 processRequest(GET), Array
+(
+    [0] => excursion_type
+    [1] => 1
+)
+
+2021/04/09 09:04:46 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => excursion_types
+)
+
+2021/04/09 09:04:46 processRequest(GET), Array
+(
+    [0] => excursion_types
+)
+
+2021/04/09 09:04:10 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => excursion_type
+    [3] => 1
+)
+
+2021/04/09 09:04:10 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => excursion_type
+    [3] => 1
+)
+
+2021/04/09 09:04:10 processRequest(POST), Array
+(
+    [0] => excursion_type
+    [1] => 1
+)
+
+2021/04/09 09:04:00 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => excursion_type
+    [3] => 1
+)
+
+2021/04/09 09:04:00 processRequest(GET), Array
+(
+    [0] => excursion_type
+    [1] => 1
+)
+
+2021/04/09 09:04:06 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => excursion_types
+)
+
+2021/04/09 09:04:06 processRequest(GET), Array
+(
+    [0] => excursion_types
+)
+
+2021/04/09 09:04:24 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => excursion_type
+    [3] => 1
+)
+
+2021/04/09 09:04:24 processRequest(POST), Array
+(
+    [0] => excursion_type
+    [1] => 1
+)
+
+2021/04/09 09:04:54 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => excursion_type
+    [3] => 1
+)
+
+2021/04/09 09:04:54 processRequest(GET), Array
+(
+    [0] => excursion_type
+    [1] => 1
+)
+
+2021/04/09 09:04:57 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => excursion_types
+)
+
+2021/04/09 09:04:57 processRequest(GET), Array
+(
+    [0] => excursion_types
+)
+
+2021/04/09 09:04:11 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => excursion_type
+    [3] => 1
+)
+
+2021/04/09 09:04:11 processRequest(PUT), Array
+(
+    [0] => excursion_type
+    [1] => 1
+)
+
+2021/04/09 09:04:52 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => excursion_type
+    [3] => 1
+)
+
+2021/04/09 09:04:52 processRequest(GET), Array
+(
+    [0] => excursion_type
+    [1] => 1
+)
+
+2021/04/09 09:04:58 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => excursion_types
+)
+
+2021/04/09 09:04:58 processRequest(GET), Array
+(
+    [0] => excursion_types
+)
+
+2021/04/09 09:04:09 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => excursion_type
+    [3] => 1
+)
+
+2021/04/09 09:04:09 processRequest(PUT), Array
+(
+    [0] => excursion_type
+    [1] => 1
+)
+
+2021/04/09 09:04:09 putExcursionType(1)
+2021/04/09 09:04:09 Array
+(
+    [name] => ЭКСКУРСИЯ В ДОМЕ МАЯКОВ
+    [description] => 
+    [participants] => 20
+    [options] => Array
+        (
+            [tickets] => Array
+                (
+                    [fullcost] => 400
+                    [discount] => 300
+                )
+
+            [schedule] => Array
+                (
+                    [timeStart] => 12:00
+                    [timeEnd] => 13:00
+                    [interval] => 20
+                )
+
+        )
+
+    [date_from] => 
+    [date_to] => 
+)
+
+2021/04/09 09:04:10 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => excursion_type
+    [3] => 1
+)
+
+2021/04/09 09:04:10 processRequest(GET), Array
+(
+    [0] => excursion_type
+    [1] => 1
+)
+
+2021/04/09 09:04:51 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => excursion_type
+    [3] => 1
+)
+
+2021/04/09 09:04:51 processRequest(GET), Array
+(
+    [0] => excursion_type
+    [1] => 1
+)
+
+2021/04/09 09:04:53 $uri=Array
+(
+    [0] => 
+    [1] => api
+    [2] => excursion_types
+)
+
+2021/04/09 09:04:53 processRequest(GET), Array
+(
+    [0] => excursion_types
+)
+

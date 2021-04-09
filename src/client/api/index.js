@@ -23,10 +23,10 @@ export function fetchHelper(url) {
   );
 }
 
-export function fetchPostHelper(url, data) {
+export function fetchPostHelper(url, data, method='POST') {
   return (
     fetch(url, {
-      method: 'POST',
+      method: method,
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
     })

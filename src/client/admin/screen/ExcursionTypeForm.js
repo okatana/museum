@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import FormTextElement from '../../components/form/FormTextElement';
 import FormTextAreaElement from '../../components/form/FormTextAreaElement';
+import ExcursionType from '../../api/ExcursionType';
 
 export default function EscursionTypeForm({typeData}) {
   const [name, setName] = useState(typeData.name);
@@ -14,23 +15,31 @@ export default function EscursionTypeForm({typeData}) {
 
   const [timeStart, setTimeStart] = useState('');
   const [timeEnd, setTimeEnd] = useState('');
-  const [intervalMinutes, setIntervalMinutes] = useState(0);
-  const [error, setError] = useState('');
+  const [interval, setInterval] = useState(0);
+  const [date_from, setDateFrom] = useState(typeData.date_from);
+  const [date_to, setDateTo] = useState(typeData.date_to);
 
+  const [error, setError] = useState('');
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
-
+    if (typeData.schedule_type === 'grid') {
+      if (options.schedule) {
+        setTimeStart(options.schedule.timeStart);
+        setTimeEnd(options.schedule.timeEnd);
+        setInterval(options.schedule.interval);
+      }
+    }
   }, []);
 
   useEffect(() => {
     const oldReady = ready;
     const newReady = name.trim().length>0 && timeStart.trim().length>0 && timeEnd.trim().length>0
-      && participants>0 && fullcost>0 && discount>0 && intervalMinutes;
+      && participants>0 && fullcost>0 && discount>0 && interval;
     if (oldReady !== newReady) {
       setReady(newReady);
     }
-  }, [name, participants, fullcost, discount, timeStart, timeEnd, intervalMinutes]);
+  }, [name, participants, fullcost, discount, timeStart, timeEnd, interval]);
 
   const validate = () => {
     return true;
@@ -39,7 +48,21 @@ export default function EscursionTypeForm({typeData}) {
   const handleSubmit = (event) => {
     event.preventDefault();
     if (validate()) {
-
+      let newOptions = {
+        tickets: {fullcost, discount}
+      };
+      if (typeData.schedule_type === 'grid') {
+        newOptions = {...newOptions, ...{schedule: {timeStart, timeEnd, interval}}};
+      }
+      const newTypeData = {
+        name, description, participants, options: newOptions, date_from, date_to
+      };
+      ExcursionType.putExcursionType(typeData.id, newTypeData)
+        .then(() => {
+          setError('');
+          alert('ExcursionType updated!');
+        })
+        .catch(err => setError(err));
     }
   }
 
@@ -63,12 +86,15 @@ export default function EscursionTypeForm({typeData}) {
                            placeholder="чч:мм" onChange={setTimeStart} />
           <FormTextElement label="время окончания" required={true} defaultValue={timeEnd}
                            placeholder="чч:мм" onChange={setTimeEnd} />
-          <FormTextElement label="интервал" required={true} defaultValue={intervalMinutes}
-                           onChange={setIntervalMinutes} />
+          <FormTextElement label="интервал" required={true} defaultValue={interval}
+                           onChange={setInterval} />
           </>
         }
+        <FormTextElement label="Действует с" onChange={setDateFrom} defaultValue={typeData.date_from}/>
+        <FormTextElement label="Действует по" onChange={setDateTo} defaultValue={typeData.date_to}/>
         <input type="submit" value="Сохранить" disabled={!ready}/>
       </form>
+      {error.length > 0 && <div className="error">{error}</div> }
     </div>
   );
 }

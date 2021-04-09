@@ -39,11 +39,41 @@ class Excursion extends BaseController{
                 if (count($params) === 1) {
                     $response = $this->getExcursionType($params[0]);                  
                 }
-                 break;
+                break;
+            case 'PUT':
+                $response = $this->putExcursionType($params[0]);
+                break;
             default:
                 $response = $this->notFoundResponse();
         }
         return $response;
+    }
+
+    private function putExcursionType($id) {
+        $this->log("putExcursionType($id)");
+        $input = (array) json_decode(file_get_contents('php://input'), TRUE);
+        $this->log(print_r($input, true));
+        $sql = <<<SQL
+UPDATE excursion_type
+SET `name`=:name, description=:description, participants=:participants, `options`=:options, date_from=:date_from, date_to=:date_to
+WHERE id=:id
+SQL;
+        try {
+            $statement = $this->db->prepare($sql);
+            $result = $statement->execute([
+                'id' => $id,
+                'name' => $input[name],
+                'description' => $input[description],
+                'participants' => $input[participants],
+                'options' => json_encode($input[options]),
+                'date_from' => $input[date_from],
+                'date_to' => $input[date_to],
+            ]);
+        } catch (\PDOException $e) {
+            //exit($e->getMessage());
+            return $this->dbErrorResponse($e->getMessage());
+        }
+        return $this->json200Response('OK');
     }
 
     private function getAllExcursionTypes()

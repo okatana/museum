@@ -1,5 +1,5 @@
 import {Config} from '../config';
-import {fetchHelper} from './index';
+import {fetchHelper, fetchPostHelper} from './index';
 
 export default class ExcursionType {
   constructor(data) {
@@ -28,6 +28,12 @@ export default class ExcursionType {
   static getExcursionTypes() {
     const url = Config.apiUrl() + `excursion_types`;
     return fetchHelper(url);
+  }
+
+  static putExcursionType(typeId, typeData) {
+    console.log('ExcursionType.putExcursionType typeData=', typeData);
+    const url = Config.apiUrl() + `excursion_type/${typeId}`;
+    return fetchPostHelper(url, typeData, 'PUT');
   }
 
   getTicketsCost() {
