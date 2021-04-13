@@ -7,7 +7,7 @@ export default function AdminMainScreen() {
 
   const onTypesClick = () => {store.setScreen(screens.TYPES)};
   const onScheduleClick = () => {store.setScreen(screens.SCHEDULE)};
-  const onDatesClick = () => {};
+  const onDatesClick = () => {store.setScreen(screens.DATES)};
   const onTodayClick = () => {store.setScreen(screens.TIMES)};
 
   return (

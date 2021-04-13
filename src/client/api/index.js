@@ -1,5 +1,5 @@
 import {getExcursionDates, getExcursionsForDate, getExcursionsForDateAdmin, addScheduledExcurions,
-  getExcursionOfficeTickets, sellOfficeTickets} from './excursion';
+  getExcursionOfficeTickets, sellOfficeTickets, getExcursionDatesAllTypes} from './excursion';
 import {addParticipant, getExcursionParticipants, getParticipantsList} from './participant';
 
 export function fetchHelper(url) {
@@ -46,5 +46,5 @@ export function fetchPostHelper(url, data, method='POST') {
 }
 
 export {getExcursionDates, getExcursionsForDate, getExcursionsForDateAdmin, addScheduledExcurions,
-  getExcursionOfficeTickets, sellOfficeTickets,
+  getExcursionOfficeTickets, sellOfficeTickets, getExcursionDatesAllTypes,
   addParticipant, getExcursionParticipants, getParticipantsList};

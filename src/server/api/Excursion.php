@@ -122,6 +122,7 @@ SQL;
 
     private function processGet($params)
     {
+        //$this->log('processGet '.print_r($params, true));
         switch (count($params)) {
             case 2:
                 if ($params[1] === 'dates') {
@@ -132,6 +133,9 @@ SQL;
                 } else
                 if ($params[1] === 'office-tickets') {
                     $response = $this->getExcursionOfficeTickets($params[0]);
+                } else
+                if ($params[0] === 'dates' && $params[1] === 'all-types') {
+                    $response = $this->getExcursionDatesAllTypes();
                 }
                 break;
             case 3:
@@ -319,6 +323,24 @@ SQL;
             $statement = $this->db->prepare($sql);
             $result = $statement->execute([$type_id]);
             $result = $statement->fetchAll(\PDO::FETCH_ASSOC);
+        } catch (\PDOException $e) {
+            //exit($e->getMessage());
+            return $this->dbErrorResponse($e->getMessage());
+        }
+
+        return $this->json200Response($result);
+    }
+
+    private function getExcursionDatesAllTypes() {
+        $this->log('getExcursionDatesAllTypes()');
+        $sql = <<<SQL
+SELECT distinct DATE(`when`) as date
+FROM excursion WHERE `when` >= DATE(NOW()) ORDER BY 1;
+SQL;
+        try {
+            $statement = $this->db->prepare($sql);
+            $result = $statement->execute([]);
+            $result = $statement->fetchAll(\PDO::FETCH_COLUMN);
         } catch (\PDOException $e) {
             //exit($e->getMessage());
             return $this->dbErrorResponse($e->getMessage());

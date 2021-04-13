@@ -17,6 +17,8 @@ const App = observer(({store}) => {
   const [error, setError] = useState('');
   //const [excursionType, setExcursionType] = useState(null);
   useEffect(() => {
+    const today = new Date();
+    store.setSelectedDate(today.toISOString().slice(0, 10));
     ExcursionType.load(Config.excursionTypeId)
       .then(excursionType => {
         console.log('excursionType', excursionType);
@@ -27,9 +29,7 @@ const App = observer(({store}) => {
         setError(`Wrong excursionTypeId = ${Config.excursionTypeId}`);
       });
   }, []);
-  const today = new Date();
-  console.log(today.toISOString().slice(0, 10));
-  store.setSelectedDate(today.toISOString().slice(0, 10));
+  //console.log(today.toISOString().slice(0, 10));
   //const {screen} = store;
 
   return (

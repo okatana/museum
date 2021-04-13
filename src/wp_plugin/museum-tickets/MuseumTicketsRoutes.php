@@ -58,10 +58,34 @@ class MuseumTicketsRoutes extends \WP_REST_Controller {
             'permission_callback' => function() {return true;}
         ]);
 
+        $base = '/excursion/(?P<id>\d+)/office-tickets';
+        register_rest_route($namespace, $base, [
+            [
+            'methods'       => 'GET',
+            'callback'      => [$this->getExcursionController(), 'getExcursionOfficeTickets'],
+            'args'          => [],
+            'permission_callback' => function() {return true;}
+            ],
+            [
+            'methods'       => 'PUT',
+            'callback'      => [$this->getExcursionController(), 'putExcursionOfficeTickets'],
+            'args'          => [],
+            'permission_callback' => function() {return true;}
+            ]
+        ]);
+
         $base = '/excursions/schedule';
         register_rest_route($namespace, $base, [
             'methods'       => 'POST',
             'callback'      => [$this->getExcursionController(), 'addScheduledExcurions'],
+            'args'          => [],
+            'permission_callback' => function() {return true;}
+        ]);
+
+        $base = '/excursion/dates/all-types';
+        register_rest_route($namespace, $base, [
+            'methods'       => 'GET',
+            'callback'      => [$this->getExcursionController(), 'getExcursionDatesAllTypes'],
             'args'          => [],
             'permission_callback' => function() {return true;}
         ]);

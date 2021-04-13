@@ -39,6 +39,55 @@ SQL;
         return new \WP_REST_Response($result, 200);
     }
 
+    public function getExcursionOfficeTickets($request)
+    {
+        global $wpdb;
+        $id = $request['id'];
+        $sql = <<<SQL
+SELECT e.fullcost_tickets, e.discount_tickets, e.free_tickets, participants_limit,
+       SUM(IFNULL(p.fullcost_tickets,0)+IFNULL(p.discount_tickets,0)+IFNULL(p.free_tickets,0)) AS site_tickets
+FROM excursion e
+LEFT JOIN participant p ON p.excursion_id=e.id AND p.status IN ('sold', 'reserved')
+WHERE e.id=%d
+GROUP BY e.id;
+
+SQL;
+        try {
+            $result = $wpdb->get_results($wpdb->prepare($sql, $id));
+        } catch (\PDOException $e) {
+            return new \WP_REST_Response($e->getMessage(), 500);
+        }
+
+        return new \WP_REST_Response($result[0], 200);
+    }
+
+    public function putExcursionOfficeTickets($request)
+    {
+        global $wpdb;
+        $id = $request['id'];
+        $params = $request->get_json_params();
+        $sql = <<<SQL
+UPDATE excursion
+SET fullcost_tickets=fullcost_tickets+%d, 
+    discount_tickets=discount_tickets+%d, 
+    free_tickets=free_tickets+%d
+WHERE id=%d
+SQL;
+        try {
+            $prepared = $wpdb->prepare($sql,
+                $params['fullcost'],
+                $params['discount'],
+                $params['free'],
+                $id
+            );
+            $result = $wpdb->query($prepared);
+        } catch (\PDOException $e) {
+            return new \WP_REST_Response($e->getMessage(), 500);
+        }
+
+        return new \WP_REST_Response('OK', 200);
+    }
+
     public function getExcursionsForDate($request)
     {
         global $wpdb;
@@ -91,6 +140,25 @@ SQL;
             return new \WP_REST_Response($e->getMessage(), 500);
         }
 
+        return new \WP_REST_Response($result, 200);
+    }
+
+    public function getExcursionDatesAllTypes($request)
+    {
+        global $wpdb;
+        $sql = <<<SQL
+SELECT distinct DATE(`when`) as date
+FROM excursion WHERE `when` >= DATE(NOW()) ORDER BY 1;
+SQL;
+        try {
+            $result = $wpdb->get_results($wpdb->prepare($sql));
+        } catch (\PDOException $e) {
+            return new \WP_REST_Response($e->getMessage(), 500);
+        }
+
+        $result = array_map(function($item) {
+            return $item->date;
+        }, $result);
         return new \WP_REST_Response($result, 200);
     }
 

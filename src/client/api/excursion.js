@@ -6,6 +6,11 @@ export function getExcursionDates(typeId) {
   return fetchHelper(url);
 }
 
+export function getExcursionDatesAllTypes() {
+  const url = Config.apiUrl() + `excursion/dates/all-types`;
+  return fetchHelper(url);
+}
+
 export function getExcursionsForDate(typeId, dateString) {
   const url = Config.apiUrl() + `excursion/${typeId}/date/${dateString}`;
   return fetchHelper(url);
