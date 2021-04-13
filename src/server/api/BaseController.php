@@ -20,7 +20,8 @@ class BaseController {
     {
         $response['status_code_header'] = 'HTTP/1.1 201 Created';
         if ($message) {
-            $response['body'] = json_encode(['message' => $message]);
+            //$response['body'] = json_encode(['message' => $message]);
+            $response['body'] = $message;
         }
         return $response;
     }

@@ -59,7 +59,7 @@ export default function EscursionTypeForm({typeData}) {
       ExcursionType.putExcursionType(typeData.id, newTypeData)
         .then(() => {
           setError('');
-          alert('ExcursionType updated!');
+          //alert('ExcursionType updated!');
         })
         .catch(err => setError(err));
     }
@@ -91,7 +91,7 @@ export default function EscursionTypeForm({typeData}) {
         }
         <FormTextElement label="Действует с" onChange={setDateFrom} defaultValue={typeData.date_from}/>
         <FormTextElement label="Действует по" onChange={setDateTo} defaultValue={typeData.date_to}/>
-        <input type="submit" value="Сохранить" disabled={!ready}/>
+        <input type="submit" className="button-fullscreen" value="Сохранить" disabled={!ready}/>
       </form>
       {error.length > 0 && <div className="error">{error}</div> }
     </div>

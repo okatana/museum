@@ -32,6 +32,7 @@ export default function OrderingScreen() {
     event.preventDefault();
     const participantOrder = {excursion_id: selectedExcursion.id, lastname, firstname, midname, phone, email, ...order};
     console.log('participantOrder=', participantOrder);
+    setReady(false);
     const promise = addParticipant(participantOrder);
     console.log('promise=', promise);
     promise  .then(() => {

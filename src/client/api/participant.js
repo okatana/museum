@@ -10,3 +10,8 @@ export function getExcursionParticipants(excursionId) {
   const url = Config.apiUrl() + `excursion/${excursionId}/participants`;
   return fetchHelper(url);
 }
+
+export function getParticipantsList(date) {
+  const url = Config.apiUrl() + `participants/date/${date}`;
+  return fetchHelper(url);
+}

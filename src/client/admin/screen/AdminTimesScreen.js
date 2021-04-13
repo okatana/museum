@@ -1,14 +1,16 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useRef} from 'react';
+import {useReactToPrint} from 'react-to-print';
 
 import {Config} from '../../config';
 import {store, screens} from '../../components/AdminStore';
 import {dateWithWeekDay, formatTime} from '../../utils';
 import {getExcursionsForDateAdmin} from '../../api';
 import BackButton from '../../components/BackButton';
+import {ParticipantsPrintList} from './ParticipantsPrintList';
 
 function TimeTableRow(timeData, onRowClick) {
   const ticketsCost = store.excursionType.getTicketsCost();
-  console.log(store.excursionType, ticketsCost);
+  //console.log(store.excursionType, ticketsCost);
   const {id, datetime, office_sold, site_sold, reserved, fullcost, discount, free} = timeData;
   const cost = Number(fullcost) * ticketsCost.fullcost + Number(discount) * ticketsCost.discount;
   return (
@@ -27,6 +29,7 @@ function TimeTableRow(timeData, onRowClick) {
 }
 
 export default function AdminTimesScreen() {
+  const componentRef = useRef();
   const selectedDate = store.selectedDate;
   const [timesData, setTimesData] = useState([]);
   useEffect(() => {
@@ -42,13 +45,19 @@ export default function AdminTimesScreen() {
     store.setExcursionData(excursionData);
     store.setScreen(screens.EXCURSION);
   }
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  });
 
   return (
     <div className="times-screen">
+      <div style={{display: "none"}}>
+        <ParticipantsPrintList ref={componentRef} date={selectedDate}/>
+      </div>
       <div className="navigation">
         <BackButton onClick={() => {store.setScreen(screens.MAIN)}}/>
         <h2 className="date-selected">{dateWithWeekDay(selectedDate)}</h2>
-        <div></div>
+        <button type="button" onClick={handlePrint}>Печать</button>
       </div>
       <h3>Проданные билеты</h3>
       <div className="admin-table">

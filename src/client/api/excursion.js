@@ -20,3 +20,14 @@ export function addScheduledExcurions(scheduleData) {
   const url = Config.apiUrl() + 'excursions/schedule';
   return fetchPostHelper(url, scheduleData);
 }
+
+export function getExcursionOfficeTickets(excursionId) {
+  const url = Config.apiUrl() + `excursion/${excursionId}/office-tickets`;
+  return fetchHelper(url);
+}
+
+export function sellOfficeTickets(excursionId, tickets) {
+  console.log('sellOfficeTickets()', excursionId, tickets);
+  const url = Config.apiUrl() + `excursion/${excursionId}/office-tickets`;
+  return fetchPostHelper(url, tickets, 'PUT');
+}

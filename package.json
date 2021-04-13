@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "admin": "webpack serve --devtool inline-source-map --hot --config webpack.admin.config.js",
+    "admin:build": "webpack --config webpack.admin.build.config.js",
     "tickets": "webpack serve --devtool inline-source-map --hot --config webpack.tickets.config.js",
     "tickets:build": "webpack --config webpack.tickets.build.config.js",
     "server": "cd src/server && php -S localhost:8000",
@@ -16,7 +17,8 @@
     "mobx": "^6.1.8",
     "mobx-react-lite": "^3.2.0",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-to-print": "^2.12.3"
   },
   "devDependencies": {
     "@babel/core": "^7.13.14",

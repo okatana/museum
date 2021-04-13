@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const buildDirectory = 'dist';
-const outputDirectory = `${buildDirectory}/tickets`;
+const outputDirectory = `${buildDirectory}/admin`;
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = () => {
@@ -20,7 +20,7 @@ module.exports = () => {
 
   return {
     mode: 'production',
-    entry: './src/client/tickets/index.js',
+    entry: './src/client/admin/index.js',
     output: {
       path: path.join(__dirname, outputDirectory),
       filename: 'bundle.js',
@@ -54,10 +54,10 @@ module.exports = () => {
         'process.env': JSON.stringify(dotenv.config({ path: envPath}).parsed) // it will automatically pick up key values from .env file
       }),
       new CleanWebpackPlugin({
-        cleanOnceBeforeBuildPatterns: [path.join(__dirname, `${buildDirectory}/tickets`)],
+        cleanOnceBeforeBuildPatterns: [path.join(__dirname, `${buildDirectory}/admin`)],
       }),
       new HtmlWebpackPlugin({
-        template: './public/tickets/index.html',
+        template: './public/admin/index.html',
       }),
       new MiniCssExtractPlugin({
         filename: 'bundle.css',

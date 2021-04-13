@@ -27,8 +27,9 @@ export default function CreateScheduleForm({typeId}) {
       addScheduledExcurions({
         typeId, dateFrom,
         dateTo: dateTo.length>0 ? dateTo : dateFrom,
-      }).then(message => {
-        setMessage(message);
+      }).then(response => {
+        //console.log('response=', response);
+        setMessage('Добавлено экскурсий '+response);
       })
     }
   }
@@ -42,7 +43,7 @@ export default function CreateScheduleForm({typeId}) {
           <FormTextElement label="Дата по" onChange={setDateTo}
                            placeholder="гггг-мм-дд" value={dateTo}/>
         </div>
-        <input type="submit" value="Создать" disabled={!ready}/>
+        <input type="submit" className="button-fullscreen" value="Создать" disabled={!ready}/>
       </form>
       {error.length > 0 && <div className="error">{error}</div>}
       {message.length > 0 && <div className="message">{message}</div>}

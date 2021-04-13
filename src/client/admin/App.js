@@ -8,7 +8,6 @@ import AdminExcursionScreen from './screen/AdminExcursionScreen';
 import AdminMainScreen from './screen/AdminMainScreen';
 import AdminTypesScreen from './screen/AdminTypesScreen';
 import AdminScheduleScreen from './screen/AdminScheduleScreen';
-import AdminDatesScreen from './screen/AdminDatesString';
 
 import ExcursionType from '../api/ExcursionType';
 import '../styles/style.css';
@@ -34,7 +33,7 @@ const App = observer(({store}) => {
   //const {screen} = store;
 
   return (
-    <div className="container">
+    <div className="container container-admin">
       <h1>Экскурсии. Администрирование</h1>
       {error.length > 0 && <div className="error">{error}</div>}
       {store.screen === screens.MAIN && <AdminMainScreen />}

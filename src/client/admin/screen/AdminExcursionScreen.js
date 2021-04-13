@@ -2,10 +2,10 @@ import React, {useEffect, useState} from 'react';
 
 import {store, screens} from '../../components/AdminStore';
 import {dateWithWeekDay, formatTime, formatDate} from '../../utils';
-import {getExcursionParticipants} from '../../api';
+import {getExcursionParticipants, getExcursionOfficeTickets} from '../../api';
 import {Config} from '../../config';
 import BackButton from '../../components/BackButton';
-
+import OfficeTicketsView from './OfficeTicketsView';
 
 function ParticipantTableRow(participantData, onRowClick) {
   const {id, lastname, firstname, midname, phone, email, when_reserved,
@@ -25,7 +25,6 @@ function ParticipantTableRow(participantData, onRowClick) {
   );
 }
 
-
 export default function AdminExcursionScreen() {
   const {selectedDate, excursionData} = store;
   //console.log('excursionData=', excursionData);
@@ -35,7 +34,7 @@ export default function AdminExcursionScreen() {
       .then(data => {
         console.log('getExcursionParticipants', data);
         setParticipantsData(data);
-      })
+      });
   }, []);
 
   const onRowClick = (participantData) => {
@@ -77,6 +76,8 @@ export default function AdminExcursionScreen() {
           {participantsData.map(participantData => ParticipantTableRow(participantData, onRowClick))}
           </tbody>
         </table>
+        <OfficeTicketsView excursionId={excursionData.id} />
+        {participantsData.length == 0 && <p>Проданных на сайте билетов нет</p>}
       </div>
     </div>
   );

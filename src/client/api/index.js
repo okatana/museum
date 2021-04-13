@@ -1,5 +1,6 @@
-import {getExcursionDates, getExcursionsForDate, getExcursionsForDateAdmin, addScheduledExcurions} from './excursion';
-import {addParticipant, getExcursionParticipants} from './participant';
+import {getExcursionDates, getExcursionsForDate, getExcursionsForDateAdmin, addScheduledExcurions,
+  getExcursionOfficeTickets, sellOfficeTickets} from './excursion';
+import {addParticipant, getExcursionParticipants, getParticipantsList} from './participant';
 
 export function fetchHelper(url) {
   const request = new Request(url);
@@ -31,10 +32,10 @@ export function fetchPostHelper(url, data, method='POST') {
       body: JSON.stringify(data)
     })
       .then(response => {
-        if (response.status === 201) {
-          return;
+        if (response.status === 201 || response.status === 200) {
+          return response.text();
         } else {
-          return response.json();
+          return response.text();
         }
       })
       .catch((error) => {
@@ -45,4 +46,5 @@ export function fetchPostHelper(url, data, method='POST') {
 }
 
 export {getExcursionDates, getExcursionsForDate, getExcursionsForDateAdmin, addScheduledExcurions,
-  addParticipant, getExcursionParticipants};
+  getExcursionOfficeTickets, sellOfficeTickets,
+  addParticipant, getExcursionParticipants, getParticipantsList};

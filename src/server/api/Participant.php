@@ -29,6 +29,40 @@ class Participant extends BaseController{
 
     private function processGet($params)
     {
+        switch (count($params)) {
+            case 2:
+                if ($params[0] === 'date') {
+                    $response = $this->getParticipantsList($params[1]);
+                }
+                break;
+         }
+        if (isset($response)) {
+            return $response;
+        } else {
+            return $this->badRequestResponse();
+        }
+    }
+
+    private function getParticipantsList($date)
+    {
+        $sql = <<<SQL
+SELECT TIME(e.when) AS time, p.id, lastname, firstname, midname, phone, email, when_reserved, 
+  p.fullcost_tickets, p.discount_tickets, p.free_tickets
+FROM participant p 
+JOIN excursion e ON e.id=p.excursion_id
+WHERE DATE(e.when)=?
+ORDER BY time, lastname, firstname
+SQL;
+        try {
+            $statement = $this->db->prepare($sql);
+            $result = $statement->execute([$date]);
+            $result = $statement->fetchAll(\PDO::FETCH_ASSOC);
+        } catch (\PDOException $e) {
+            //exit($e->getMessage());
+            return $this->dbErrorResponse($e->getMessage());
+        }
+
+        return $this->json200Response($result);
     }
 
     private function processPost($params)

@@ -22,6 +22,9 @@ class Excursion extends BaseController{
                 case 'POST':
                     $response = $this->processPost($params);
                     break;
+                case 'PUT':
+                    $response = $this->processPut($params);
+                    break;
                 default:
                     $response = $this->notFoundResponse();
             }
@@ -127,6 +130,9 @@ SQL;
                 if ($params[1] === 'participants') {
                     $response = $this->getExcursionParticipants($params[0]);
                 } else
+                if ($params[1] === 'office-tickets') {
+                    $response = $this->getExcursionOfficeTickets($params[0]);
+                }
                 break;
             case 3:
                 if ($params[1] === 'date') {
@@ -144,6 +150,44 @@ SQL;
         } else {
             return $this->badRequestResponse();
         }
+    }
+
+    private function processPut($params)
+    {
+        switch (count($params)) {
+            case 2:
+                if ($params[1] === 'office-tickets') {
+                    $response = $this->updateExcursionTickets($params[0]);
+                }
+                break;
+        }
+        return $response;
+    }
+
+    private function updateExcursionTickets($id) {
+        $this->log("updateExcursionTickets($id)");
+        $input = (array) json_decode(file_get_contents('php://input'), TRUE);
+        $this->log(print_r($input, true));
+        $sql = <<<SQL
+UPDATE excursion
+SET fullcost_tickets=fullcost_tickets+:fullcost_tickets, 
+    discount_tickets=discount_tickets+:discount_tickets, 
+    free_tickets=free_tickets+:free_tickets
+WHERE id=:id
+SQL;
+        try {
+            $statement = $this->db->prepare($sql);
+            $result = $statement->execute([
+                'id' => $id,
+                'fullcost_tickets' => $input['fullcost'],
+                'discount_tickets' => $input['discount'],
+                'free_tickets' => $input['free'],
+            ]);
+        } catch (\PDOException $e) {
+            //exit($e->getMessage());
+            return $this->dbErrorResponse($e->getMessage());
+        }
+        return $this->json200Response('OK');
     }
 
     private function processPost($params)
@@ -262,7 +306,8 @@ SQL;
         } catch (\Exception $e) {
             return $this->dbErrorResponse($e->getMessage());
         }
-        return $this->json200Response("Добавлено экскурсий $counter");
+        //return $this->json201Response("Добавлено экскурсий $counter");
+        return $this->json201Response($counter);
     }
 
     private function getAvalableDates($type_id) {
@@ -290,6 +335,27 @@ SQL;
             $statement = $this->db->prepare($sql);
             $result = $statement->execute([$excursion_id]);
             $result = $statement->fetchAll(\PDO::FETCH_ASSOC);
+        } catch (\PDOException $e) {
+            //exit($e->getMessage());
+            return $this->dbErrorResponse($e->getMessage());
+        }
+
+        return $this->json200Response($result);
+    }
+
+    private function getExcursionOfficeTickets($excursion_id) {
+        $sql = <<<SQL
+SELECT e.fullcost_tickets, e.discount_tickets, e.free_tickets, participants_limit,
+       SUM(IFNULL(p.fullcost_tickets,0)+IFNULL(p.discount_tickets,0)+IFNULL(p.free_tickets,0)) AS site_tickets
+FROM excursion e
+LEFT JOIN participant p ON p.excursion_id=e.id AND p.status IN ('sold', 'reserved')
+WHERE e.id=?
+GROUP BY e.id;
+SQL;
+        try {
+            $statement = $this->db->prepare($sql);
+            $result = $statement->execute([$excursion_id]);
+            $result = $statement->fetch(\PDO::FETCH_ASSOC);
         } catch (\PDOException $e) {
             //exit($e->getMessage());
             return $this->dbErrorResponse($e->getMessage());
@@ -337,7 +403,7 @@ LEFT JOIN participant ps ON ps.excursion_id=e.id AND ps.status='sold'
 LEFT JOIN participant pr ON pr.excursion_id=e.id AND pr.status='reserved'
 WHERE type_id=? AND DATE(`when`)=? 
 GROUP BY e.id
-ORDER BY 1;
+ORDER BY datetime;
 SQL;
         try {
             $statement = $this->db->prepare($sql);

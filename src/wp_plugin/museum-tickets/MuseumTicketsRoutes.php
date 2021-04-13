@@ -42,10 +42,66 @@ class MuseumTicketsRoutes extends \WP_REST_Controller {
             'permission_callback' => function() {return true;}
         ]);
 
-        $base = '/participant';
+        $base = '/excursion/(?P<type_id>\d+)/date/(?P<date>\d\d\d\d-\d\d-\d\d)/admin';
+        register_rest_route($namespace, $base, [
+            'methods'       => 'GET',
+            'callback'      => [$this->getExcursionController(), 'getExcursionsForDateAdmin'],
+            'args'          => [],
+            'permission_callback' => function() {return true;}
+        ]);
+
+        $base = '/excursion/(?P<id>\d+)/participants';
+        register_rest_route($namespace, $base, [
+            'methods'       => 'GET',
+            'callback'      => [$this->getExcursionController(), 'getExcursionParticipants'],
+            'args'          => [],
+            'permission_callback' => function() {return true;}
+        ]);
+
+        $base = '/excursions/schedule';
+        register_rest_route($namespace, $base, [
+            'methods'       => 'POST',
+            'callback'      => [$this->getExcursionController(), 'addScheduledExcurions'],
+            'args'          => [],
+            'permission_callback' => function() {return true;}
+        ]);
+
+        $base = '/excursion_types';
+        register_rest_route($namespace, $base, [
+            'methods'       => 'GET',
+            'callback'      => [$this->getExcursionController(), 'getExcursionTypes'],
+            'args'          => [],
+            'permission_callback' => function() {return true;}
+        ]);
+
+        $base = '/excursion_type/(?P<type_id>\d+)';
+        register_rest_route($namespace, $base, [
+            'methods'       => 'GET',
+            'callback'      => [$this->getExcursionController(), 'getExcursionType'],
+            'args'          => [],
+            'permission_callback' => function() {return true;}
+        ]);
+
+        $base = '/excursion_type/(?P<type_id>\d+)';
+        register_rest_route($namespace, $base, [
+            'methods'       => 'PUT',
+            'callback'      => [$this->getExcursionController(), 'putExcursionType'],
+            'args'          => [],
+            'permission_callback' => function() {return true;}
+        ]);
+
+        $base = '/participants';
         register_rest_route($namespace, $base, [
             'methods'       => 'POST',
             'callback'      => [$this->getParticipantController(), 'addParticipant'],
+            'args'          => [],
+            'permission_callback' => function() {return true;}
+        ]);
+
+        $base = '/participants/date/(?P<date>\d\d\d\d-\d\d-\d\d)';
+        register_rest_route($namespace, $base, [
+            'methods'       => 'GET',
+            'callback'      => [$this->getParticipantController(), 'getParticipantsList'],
             'args'          => [],
             'permission_callback' => function() {return true;}
         ]);

@@ -35,7 +35,7 @@ export default function EscursionTypeView({typeData}) {
             <tr><td>Действует с</td><td>{typeData.date_from}</td></tr>
             <tr><td>Действует по</td><td>{typeData.date_to}</td></tr>
           </tbody></table>
-          <button type="button" onClick={() => setEditing(true)}>Редактировать</button>
+          <button type="button" className="button-fullscreen" onClick={() => setEditing(true)}>Редактировать</button>
         </> }
 
       {editing && <EscursionTypeForm typeData={typeData} />}

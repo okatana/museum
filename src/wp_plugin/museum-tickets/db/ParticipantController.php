@@ -4,6 +4,27 @@ namespace MuseumTicketsPlugin\db;
 
 class ParticipantController extends BaseController
 {
+    public function getParticipantsList($request)
+    {
+        global $wpdb;
+        $date = $request['date'];
+        $sql = <<<SQL
+SELECT TIME(e.when) AS time, p.id, lastname, firstname, midname, phone, email, when_reserved, 
+  p.fullcost_tickets, p.discount_tickets, p.free_tickets
+FROM participant p 
+JOIN excursion e ON e.id=p.excursion_id
+WHERE DATE(e.when)=%s
+ORDER BY time, lastname, firstname
+SQL;
+        try {
+            $result = $wpdb->get_results($wpdb->prepare($sql, $date));
+        } catch (\PDOException $e) {
+            return new \WP_REST_Response($e->getMessage(), 500);
+        }
+
+        return new \WP_REST_Response($result, 200);
+    }
+
 
     public function addParticipant($request)
     {
