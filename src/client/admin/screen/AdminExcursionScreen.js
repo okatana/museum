@@ -77,7 +77,6 @@ export default function AdminExcursionScreen() {
           </tbody>
         </table>
         <OfficeTicketsView excursionId={excursionData.id} />
-        {participantsData.length == 0 && <p>Проданных на сайте билетов нет</p>}
       </div>
     </div>
   );

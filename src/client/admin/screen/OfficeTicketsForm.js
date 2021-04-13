@@ -6,12 +6,18 @@ import ExcursionType from '../../api/ExcursionType';
 
 
 function TicketSelect({title, price, max, color, onChange, defaultValue=0}) {
-  //const clr = "#3E66FB";
+  console.log('TicketSelect', title, defaultValue);
+  const [value, setValue] = useState(defaultValue);
+  const onNIChange = val => {
+    setValue(val);
+    onChange(val);
+  };
+
   return (
     <div className="ticket-select">
       <div className="ticket-select-color" style={{backgroundColor: color}}></div>
       <p>{title} ({price} руб.)</p>
-      <NumberIncrementDecrement min={0} max={max} value={defaultValue} onChange={onChange} />
+      <NumberIncrementDecrement min={0} max={max} value={value} onChange={onNIChange} />
     </div>
   );
 }
@@ -31,6 +37,7 @@ export default function OfficeTicketsForm({excursionId, availableTickets, onUpda
   const [tickets, setTickets] = useState(noTickets);
   const [ticketsLeft, setTicketsLeft] = useState(availableTickets);
   const [cost, setCost] = useState(0);
+  const [soldMessage, setSoldMessage] = useState('');
   const onChange = (type, value) => {
     console.log('onChange() type=', type, 'value=', value);
     setTickets({...tickets, ...{[type]: value}});
@@ -51,8 +58,12 @@ export default function OfficeTicketsForm({excursionId, availableTickets, onUpda
   const sellTickets = () => {
     sellOfficeTickets(excursionId, tickets)
       .then(() => {
-        setTickets(noTickets);
-        forceUpdate();
+        setTickets({...noTickets});
+        //forceUpdate();
+        setSoldMessage('Билеты проданы!');
+        setTimeout(() => {
+          setSoldMessage('');
+        }, 2000);
         onUpdated();
       })
   }
@@ -60,7 +71,8 @@ export default function OfficeTicketsForm({excursionId, availableTickets, onUpda
   return (
     <div className="office-tickets-form">
       <h2>Доступно билетов - {availableTickets}</h2>
-      {ticketsInfo.map(ticketInfo => (
+      {soldMessage.length > 0 && <div>{soldMessage}</div>}
+      {soldMessage.length == 0 && ticketsInfo.map(ticketInfo => (
         <TicketSelect key={ticketInfo.type}
                       title={ticketInfo.title}
                       price={ticketInfo.price}
