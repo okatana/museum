@@ -289,9 +289,21 @@ p.image-button-image{
     color: red;
     vertical-align: text-top;
 }
-.form-element input, .form-element textarea{
+.form-element > input, .form-element > textarea,
+.form-element .react-datepicker-wrapper {
     width: 100%;
 }
+.form-element .react-datepicker-wrapper {
+    display: block;
+    margin-left: -4px;
+/*    box-sizing: border-box;*/
+}
+.form-element .react-datepicker-wrapper input {
+    width: 100%;
+    display: block;
+    box-sizing: border-box;
+}
+
 .error {
     color: red;
 }

@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 
 import {store, screens} from '../../components/AdminStore';
-import {dateWithWeekDay, formatTime, formatDate} from '../../utils';
+import {dateWithWeekDay, formatTime, formatDateString} from '../../utils';
 import {getExcursionParticipants, getExcursionOfficeTickets} from '../../api';
 import {Config} from '../../config';
 import BackButton from '../../components/BackButton';
@@ -20,7 +20,7 @@ function ParticipantTableRow(participantData, onRowClick) {
       <td>{free_tickets}</td>
       <td>{cost}</td>
       <td>{status}</td>
-      <td>{formatDate(when_reserved)}</td>
+      <td>{formatDateString(when_reserved)}</td>
     </tr>
   );
 }

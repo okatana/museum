@@ -20,3 +20,4 @@ $ npm i -D dotenv
 
 $ npm i react-to-print
 
+$ npm i react-datepicker

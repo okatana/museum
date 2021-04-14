@@ -6,9 +6,15 @@ export function dateWithWeekDay(dateString) {
   return `${weekDays[date.getDay()]} ${dateString}`;
 }
 
-export function formatDate(dateString) {
-  const date = new Date(dateString);
-  return date.toISOString().slice(0, 10);
+export function formatDateString(dateString) {
+  return formatDate(new Date(dateString));
+}
+
+export function formatDate(date) {
+  //const date = new Date(dateString);
+  const offset = date.getTimezoneOffset();
+  const _date = new Date(date.getTime() - (offset*60*1000))
+  return _date.toISOString().slice(0, 10);
 }
 
 export function formatTime(dateString) {
