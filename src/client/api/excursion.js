@@ -16,6 +16,11 @@ export function getExcursionsForDate(typeId, dateString) {
   return fetchHelper(url);
 }
 
+export function getExcursionsForDateAdminAllTypes(dateString) {
+  const url = Config.apiUrl() + `excursion/all-types/date/${dateString}/admin`;
+  return fetchHelper(url);
+}
+
 export function getExcursionsForDateAdmin(typeId, dateString) {
   const url = Config.apiUrl() + `excursion/${typeId}/date/${dateString}/admin`;
   return fetchHelper(url);

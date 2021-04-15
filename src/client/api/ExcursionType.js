@@ -30,6 +30,11 @@ export default class ExcursionType {
     return fetchHelper(url);
   }
 
+  static postExcursionType(typeData) {
+    console.log('ExcursionType.postExcursionType typeData=', typeData);
+    const url = Config.apiUrl() + `excursion_type`;
+    return fetchPostHelper(url, typeData);
+  }
   static putExcursionType(typeId, typeData) {
     console.log('ExcursionType.putExcursionType typeData=', typeData);
     const url = Config.apiUrl() + `excursion_type/${typeId}`;

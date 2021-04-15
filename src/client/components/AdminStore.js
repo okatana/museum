@@ -16,6 +16,7 @@ class Store {
   screen = null;
   selectedDate = null;
   excursionType = null;
+  excursionTypes = [];
   excursionData = observable({}, {proxy: false});
 
   constructor() {
@@ -23,6 +24,7 @@ class Store {
       screen: observable,
       selectedDate: observable,
       excursionType: observable,
+      excursionTypes: observable,
       setSelectedDate: action,
       setExcursionType: action,
       setExcursionData: action,
@@ -40,6 +42,10 @@ class Store {
 
   setExcursionType(excursionType) {
     this.excursionType = excursionType;
+  }
+
+  setExcursionTypes(excursionTypes) {
+    this.excursionTypes = excursionTypes;
   }
 
   setExcursionData(excursionData) {

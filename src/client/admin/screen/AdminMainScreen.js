@@ -2,8 +2,21 @@ import React, {useEffect, useState} from 'react';
 
 import {screens, store} from '../../components/AdminStore';
 import MenuButton from '../../components/MenuButton';
+import ExcursionType from '../../api/ExcursionType';
 
 export default function AdminMainScreen() {
+  const [typesData, setTypesData] = useState([]);
+  useEffect(() => {
+    loadData();
+  }, []);
+
+  const loadData = () => {
+    ExcursionType.getExcursionTypes()
+      .then(data => {
+        store.setExcursionTypes(data);
+        setTypesData(data);
+      })
+  }
 
   const onTypesClick = () => {store.setScreen(screens.TYPES)};
   const onScheduleClick = () => {store.setScreen(screens.SCHEDULE)};
@@ -19,7 +32,7 @@ export default function AdminMainScreen() {
         <MenuButton label="Сегодня" onClick={onTodayClick} />
       </div>
       <div className="main-stats">
-        Здесь будет находится статистическая информация
+        Типов экскурсий - {typesData.length}
       </div>
     </div>
   );

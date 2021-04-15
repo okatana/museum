@@ -329,7 +329,9 @@ p.image-button-image{
 .admin-table table tr:nth-child(even){
     background-color: #f2f2f2;
 }
-
+.admin-table table tr:hover {
+    background-color: coral;
+}
 .excursion-type-view {
     background-color: #eee;
     margin-top: 1em;
@@ -345,7 +347,17 @@ p.image-button-image{
     font-family: Oswald, serif;
     padding: 10px;
 }
-
+.button-fullscreen:disabled {
+    background-color: #e2e2e2;
+    border: none;
+}
+.action-buttons {
+    display: flex;
+    justify-content: space-between;
+}
+.action-buttons .button-fullscreen{
+    width: 90%;
+}
 form{
     margin: 0 auto;
     width:50%;

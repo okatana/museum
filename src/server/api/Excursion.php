@@ -46,6 +46,9 @@ class Excursion extends BaseController{
                     $response = $this->getExcursionType($params[0]);                  
                 }
                 break;
+            case 'POST':
+                $response = $this->postExcursionType();
+                break;
             case 'PUT':
                 $response = $this->putExcursionType($params[0]);
                 break;
@@ -53,6 +56,31 @@ class Excursion extends BaseController{
                 $response = $this->notFoundResponse();
         }
         return $response;
+    }
+
+    private function postExcursionType() {
+        $this->log("postExcursionType()");
+        $input = (array) json_decode(file_get_contents('php://input'), TRUE);
+        $this->log(print_r($input, true));
+        $sql = <<<SQL
+INSERT INTO excursion_type (`name`, description, participants, `options`, date_from, date_to)
+VALUES (:name, :description, :participants, :options, :date_from, :date_to)
+SQL;
+        try {
+            $statement = $this->db->prepare($sql);
+            $result = $statement->execute([
+                'name' => $input['name'],
+                'description' => $input['description'],
+                'participants' => $input['participants'],
+                'options' => json_encode($input['options']),
+                'date_from' => $input['date_from'],
+                'date_to' => $input['date_to'],
+            ]);
+        } catch (\PDOException $e) {
+            //exit($e->getMessage());
+            return $this->dbErrorResponse($e->getMessage());
+        }
+        return $this->json201Response();
     }
 
     private function putExcursionType($id) {
@@ -146,6 +174,9 @@ SQL;
             case 4:
                 if ($params[1] === 'date' && $params[3] === 'admin') {
                     $response = $this->getExcursionsForDateAdmin($params[0], $params[2]);
+                }
+                if ($params[0] === 'all-types' && $params[1] === 'date' && $params[3] === 'admin') {
+                    $response = $this->getExcursionsForDateAdminAllTypes($params[2]);
                 }
                 break;
            }
@@ -430,6 +461,34 @@ SQL;
         try {
             $statement = $this->db->prepare($sql);
             $result = $statement->execute([$type_id, $date]);
+            $result = $statement->fetchAll(\PDO::FETCH_ASSOC);
+        } catch (\PDOException $e) {
+            //exit($e->getMessage());
+            return $this->dbErrorResponse($e->getMessage());
+        }
+
+        return $this->json200Response($result);
+    }
+
+    private function getExcursionsForDateAdminAllTypes($date) {
+        $sql = <<<SQL
+SELECT type_id, e.id, participants_limit, `when` AS datetime, 
+    e.fullcost_tickets+e.discount_tickets+e.free_tickets AS office_sold,
+    SUM(IFNULL(ps.fullcost_tickets,0)+IFNULL(ps.discount_tickets,0)+IFNULL(ps.free_tickets,0)) AS site_sold,
+    SUM(IFNULL(pr.fullcost_tickets,0)+IFNULL(pr.discount_tickets,0)+IFNULL(pr.free_tickets,0)) AS reserved,
+    e.fullcost_tickets+SUM(IFNULL(ps.fullcost_tickets,0)) AS fullcost,
+    e.discount_tickets+SUM(IFNULL(ps.discount_tickets,0)) AS discount,
+    e.free_tickets+SUM(IFNULL(ps.free_tickets,0)) AS free
+FROM excursion e
+LEFT JOIN participant ps ON ps.excursion_id=e.id AND ps.status='sold'
+LEFT JOIN participant pr ON pr.excursion_id=e.id AND pr.status='reserved'
+WHERE DATE(`when`)=? 
+GROUP BY e.id
+ORDER BY datetime;
+SQL;
+        try {
+            $statement = $this->db->prepare($sql);
+            $result = $statement->execute([$date]);
             $result = $statement->fetchAll(\PDO::FETCH_ASSOC);
         } catch (\PDOException $e) {
             //exit($e->getMessage());

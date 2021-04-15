@@ -4,7 +4,7 @@ import {useReactToPrint} from 'react-to-print';
 import {Config} from '../../config';
 import {store, screens} from '../../components/AdminStore';
 import {dateWithWeekDay, formatTime} from '../../utils';
-import {getExcursionsForDateAdmin} from '../../api';
+import {getExcursionsForDateAdmin, getExcursionsForDateAdminAllTypes} from '../../api';
 import BackButton from '../../components/BackButton';
 import {ParticipantsPrintList} from './ParticipantsPrintList';
 
@@ -37,7 +37,14 @@ export default function AdminTimesScreen() {
       .then(data => {
         //console.log('getExcursionsForDateAdmin', data);
         setTimesData(data);
-      })
+      });
+/*
+    getExcursionsForDateAdminAllTypes(selectedDate)
+      .then(data => {
+        //console.log('getExcursionsForDateAdmin', data);
+        setTimesData(data);
+      });
+*/
   }, []);
 
   const onRowClick = (excursionData) => {

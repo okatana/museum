@@ -334,7 +334,7 @@ SQL;
 
                     if ($result) {
                         //$this->log('excursion added = '.$statement->rowCount());
-                        $counter += $wpdb->num_rows;
+                        $counter += $wpdb->rows_affected;
                     } else {
                         //$this->log('excursion add failed');
                     }

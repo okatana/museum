@@ -8,7 +8,6 @@ import BackButton from '../../components/BackButton';
 import TicketsInfo, {ticketsInfo} from '../../components/TicketsInfo';
 import NumberIncrementDecrement from '../../components/NumberIncrementDecrement';
 
-
 function TicketSelect({title, price, max, color, onChange}) {
   //const clr = "#3E66FB";
   return (

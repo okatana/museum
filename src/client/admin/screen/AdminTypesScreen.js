@@ -49,19 +49,28 @@ export default function AdminTypesScreen() {
   const [typesData, setTypesData] = useState([]);
   const [selectedType, setSelectedType] = useState(null);
   useEffect(() => {
+    loadData();
+  }, []);
+
+  const loadData = () => {
     ExcursionType.getExcursionTypes()
       .then(data => {
         console.log('getExcursionTypes', data);
+        store.setExcursionTypes(data);
         setTypesData(data);
         if (data.length == 1) {
           setSelectedType(data[0]);
         }
       })
-  }, []);
+  }
 
   const onRowClick = (typeData) => {
     console.log('onRowClick ', typeData);
     setSelectedType(typeData);
+  }
+
+  const onChange = () => {
+    loadData();
   }
 
 
@@ -94,7 +103,7 @@ export default function AdminTypesScreen() {
         <p>(Выберите тип (строку в таблице) для просмотра и редактирования)</p>
       }
       {selectedType &&
-        <EscursionTypeView typeData={selectedType} />
+        <EscursionTypeView typeData={selectedType} onChange={onChange}/>
       }
 
     </div>
